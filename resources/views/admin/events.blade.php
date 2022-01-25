@@ -25,10 +25,8 @@
 <!-- End Bread crumb and right sidebar toggle -->
 
 <!-- Container fluid  -->
-<!-- ======================================== -->
 <div class="container-fluid">
     <!-- Start Page Content -->
-    <!-- ======================================= -->
     @if(isset($delete))
         <div class="card">
             <div class="card-body">

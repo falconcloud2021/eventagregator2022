@@ -17,33 +17,32 @@ use Illuminate\Validation\ValidationException;
 |
 */
 // Routing send tokens API "mobile applications"
-Route::post('/sanctum/token', function (Request $request) {
-    $request->validate(['email' => 'required|email', 'password' => 'required', 'device_name' => 'required',]);
-    $user = User::where('email', $request->email)->first();
-        if (! $user || ! Hash::check($request->password, $user->password)) {
-            throw ValidationException::withMessages(['email' => ['The provided credentials are incorrect.'],]);
-        }
-        return $user->createToken($request->device_name)->plainTextToken;
-});
+// Route::post('/sanctum/token', function (Request $request) {
+//     $request->validate(['email' => 'required|email', 'password' => 'required', 'device_name' => 'required',]);
+//     $user = User::where('email', $request->email)->first();
+//         if (! $user || ! Hash::check($request->password, $user->password)) {
+//             throw ValidationException::withMessages(['email' => ['The provided credentials are incorrect.'],]);
+//         }
+//         return $user->createToken($request->device_name)->plainTextToken;
+// });
 // Default opened routing send tokens API "desktop web version" for all users
-Route::get('/',                     'Api\FrontController@index')->name('expenses.indexPage');
-Route::get('events/show',           'Api\FrontController@eventsShowAll')->name('expenses');
-Route::get('event/show/{id}',       'Api\FrontController@eventShowItem')->name('expenses.itemEvent');
-Route::post('events/selection',     'Api\FrontController@eventsSelect')->name('expenses.selectEvent');
+Route::get('/',                     'App\Http\Controllers\FrontController@index')->name('expenses.indexPage');
+Route::get('/event/show/{id}',      'App\Http\Controllers\FrontController@eventShowItem')->name('expenses.itemEvent');
+Route::post('/events/selection',    'App\Http\Controllers\FrontController@eventsSelect')->name('expenses.selectEvent');
 
-Route::post('/register',        'Api\AuthController@register');
-Route::post('/login',           'Api\AuthController@login');
-// Authorize user auth:api
-Route::middleware('auth:api')->group(function () {
-    Route::get('user/comments',     'Api\FrontUsersController@frontUsersCommentsList')->name('users.listComments');
-    Route::get('user/rate',         'Api\FrontUsersController@frontUserRate')->name('users.rateLevel');
-    Route::post('user/add-comment', 'Api\FrontUsersController@frontUsersAddComment')->name('users.addComment');
-});
-// Authorize user auth:sanctum
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-// CRUD roles routing send tokens API "desktop web version" / "authorized partners-users"
+// Route::post('/register',        'Api\AuthController@register');
+// Route::post('/login',           'Api\AuthController@login');
+// // Authorize user auth:api
+// Route::middleware('auth:api')->group(function () {
+//     Route::get('user/comments',     'Api\FrontUsersController@frontUsersCommentsList')->name('users.listComments');
+//     Route::get('user/rate',         'Api\FrontUsersController@frontUserRate')->name('users.rateLevel');
+//     Route::post('user/add-comment', 'Api\FrontUsersController@frontUsersAddComment')->name('users.addComment');
+// });
+// // Authorize user auth:sanctum
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+// // CRUD roles routing send tokens API "desktop web version" / "authorized partners-users"
 Route::middleware('auth:sanctum', 'verified')->group(function () {
     Route::get('partner/events',            'Api\FrontPartnersController@frontEventsList')->name('partners.listEvents');
     Route::post('partner/event/store',      'Api\FrontPartnersController@frontEventStore')->name('partners.storeEvent');

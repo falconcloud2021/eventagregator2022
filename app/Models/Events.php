@@ -102,7 +102,7 @@ class Events extends Model
 
         $data['image_intro']->move(Storage::path('public\image\\').'origin\\' , $filename_image_intro);
         $data['image_full']->move(Storage::path('public\image\\').'origin\\',$filename_image_full);
-
+ 
         $response = DB::table('events')
             ->insert([
                 "event_name"            => $data['event_name'],

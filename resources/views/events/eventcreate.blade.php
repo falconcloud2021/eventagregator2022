@@ -22,10 +22,8 @@
     <!-- End Bread crumb and right sidebar toggle -->
 
     <!-- Container fluid  -->
-    <!-- ===================================== -->
     <div class="container-fluid">
         <!-- Start Page Content -->
-        <!-- ===================================== -->
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
