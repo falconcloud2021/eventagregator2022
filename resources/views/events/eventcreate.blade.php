@@ -5,28 +5,31 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Events Editor</h4>
+                <h4 class="page-title">Розділ: "Events Editor!"</h4>
+                <div class="ms-auto text-center">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter"><small>Правила заповнення картки спорт-події</small></button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                    <button type="button" class="btn btn-info btn btn-sm text-white" title="Спочатку ознайомтесь з Правилами заповнення картки Спорт-події!" data-toggle="modal" data-target="#exampleModalCenter">
+                        <small>Правила заповнення картки Спорт-події</small></button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                    </div>
-                </div>
                 </div>
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
@@ -37,11 +40,6 @@
                                 <i class="text-primary"><b>Створення Спорт-події.</b></i>
                         </ol>
                     </nav>
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-dark" href="/events">Всі події</button>
-                        <button type="button" class="btn btn-dark">Редактор</button>
-                        <button type="button" class="btn btn-dark">Рейтинг</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -51,15 +49,43 @@
     <!-- Container fluid  -->
     <div class="container-fluid">
         <!-- Start Page Content -->
+        @if(isset($delete))
+            <div class="card">
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                        Видалення успішно виконано !
+                    </div>
+                </div>
+            </div>
+        @endif
+        @if(isset($create))
+            <div class="card">
+                <div class="card-body">
+                    <div class="alert alert-success" role="alert">
+                        Створення Спорт-події успішно виконано !
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-body">
+                        <div class="ms-auto text-end">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <a href="/events"><button type="button" class="btn btn-dark">Всі події</button></a>
+                                <button type="button" class="btn btn-dark">Редактор</button>
+                                <button type="button" class="btn btn-dark">Рейтинг</button>
+                            </div>
+                        </div>
+                        <h5 class="card-title">1. Форма створення Спорт-події в <strong>Sportcalendar:</strong></h5>
+                    </div>
                     <form class="form-horizontal" action="/event/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
                             <h4 class="card-title"> Створення події </h4>
                             <div class="form-group row">
-                                <label for="event_name" class="col-sm-3 text-end control-label col-form-label"> Назва спорт-події :
+                                <label for="event_name" class="col-sm-3 text-end control-label col-form-label"> Назва Спорт-події :
                                     @if ($errors->has('event_name'))
                                         <span class="badge bg-danger"> Danger </span>
                                     @endif
@@ -69,7 +95,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_type" class="col-sm-3 text-end control-label col-form-label"> Тип спорт-події :
+                                <label for="event_type" class="col-sm-3 text-end control-label col-form-label"> Тип Спорт-події :
                                     @if ($errors->has('event_type'))
                                         <span class="badge bg-danger"> Danger </span>
                                     @endif
@@ -87,7 +113,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_description" class="col-sm-3 text-end control-label col-form-label"> Опис спорт-події:
+                                <label for="event_description" class="col-sm-3 text-end control-label col-form-label"> Опис Спорт-події:
                                     @if ($errors->has('event_description'))
                                         <span class="badge bg-danger"> Danger </span>
                                     @endif
@@ -154,7 +180,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_link" class="col-sm-3 text-end control-label col-form-label">Посилання спорт-подію :
+                                <label for="event_link" class="col-sm-3 text-end control-label col-form-label">Посилання Спорт-подію :
                                     @if ($errors->has('event_link'))
                                         <span class="badge bg-danger"> Danger </span>
                                     @endif
@@ -174,7 +200,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label"> Статус спорт-події
+                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label"> Статус Спорт-події
                                     @if ($errors->has('event_status'))
                                         <span class="badge bg-danger"> Danger </span>
                                     @endif

@@ -50,7 +50,6 @@
             {{-- 1 Actual Report Events Table --}}
             <div class="card">
                 <div class="card-body">
-                    <div>
                         <h5 class="card-title">1. Список доданних спорт-подій в <strong>Sportcalendar:</strong></h5>
                         {{-- <form action="{{ route('event_create') }}" method="GET">
                             @csrf
@@ -59,7 +58,6 @@
                         <a href="/event/create" >
                             <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
                         </a>
-                    </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table">
