@@ -52,10 +52,13 @@
                 <div class="card-body">
                     <div>
                         <h5 class="card-title">1. Список доданних спорт-подій в <strong>Sportcalendar:</strong></h5>
-                        <form action="{{ route('event_create') }}" method="GET">
+                        {{-- <form action="{{ route('event_create') }}" method="GET">
                             @csrf
                             <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
-                        </form>
+                        </form> --}}
+                        <a href="/event/create" >
+                            <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
+                        </a>
                     </div>
                 </div>
                 <div class="table-responsive">

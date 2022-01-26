@@ -40,7 +40,7 @@ class Events extends Model
                 "updated_at"
             )
             ->latest()
-            ->paginate(2);
+            ->paginate(4);
 
     }
 

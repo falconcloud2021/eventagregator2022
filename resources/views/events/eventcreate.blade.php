@@ -1,20 +1,47 @@
 @extends('layouts.admin')
-@section('title', 'eventscreate')
+@section('title', 'eventcreate')
 @section('content')
     <!-- Bread crumb and right sidebar toggle -->
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
                 <h4 class="page-title">Events Editor</h4>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModalCenter"><small>Правила заповнення картки спорт-події</small></button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Dashboard-I</a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
+                            <h6><i>Dashboard-I</i></h6></a></li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Створення події
-                            </li>
+                                <i class="text-primary"><b>Створення Спорт-події.</b></i>
                         </ol>
                     </nav>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-dark" href="/events">Всі події</button>
+                        <button type="button" class="btn btn-dark">Редактор</button>
+                        <button type="button" class="btn btn-dark">Рейтинг</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,375 +54,232 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <form class="form-horizontal" action="{{ route('event_store') }}" method="POST" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="/event/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-                            <h4 class="card-title">Створення події</h4>
+                            <h4 class="card-title"> Створення події </h4>
                             <div class="form-group row">
-                                <label
-                                    for="event_name"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Назва
+                                <label for="event_name" class="col-sm-3 text-end control-label col-form-label"> Назва спорт-події :
                                     @if ($errors->has('event_name'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-
-                                <div class="col-sm-6">
-                                    <input type="text"
-                                        class="form-control"
-                                        id="event_name"
-                                        name="event_name"
-                                    />
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" id="event_name" name="event_name" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_type"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Тип
+                                <label for="event_type" class="col-sm-3 text-end control-label col-form-label"> Тип спорт-події :
                                     @if ($errors->has('event_type'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="event_type"
-                                        name="event_type"
-                                    />
+                                <div class="col-sm-3">
+                                    <input class="form-control" type="text" id="event_type" name="event_type" />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    for="category_id"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Id категорії
+                                <label for="category_id" class="col-sm-2 text-end control-label col-form-label"> Id категорії :
                                     @if ($errors->has('category_id'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="category_id"
-                                        name="category_id"
-                                    />
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" id="category_id" name="category_id" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_description"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Опис заходу
+                                <label for="event_description" class="col-sm-3 text-end control-label col-form-label"> Опис спорт-події:
                                     @if ($errors->has('event_description'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <textarea class="form-control" id="event_description" name="event_description"></textarea>
+                                <div class="col-sm-8">
+                                    <textarea class="form-control row-4" id="event_description" name="event_description"></textarea>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="city"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Місто проведення
+                                <label for="city" class="col-sm-3 text-end control-label col-form-label"> Місто
                                     @if ($errors->has('city'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="city"
-                                        name="city"
-                                    />
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" id="city" name="city" />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    for="street"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Вулиця проведення
+                                <label for="street" class="col-sm-2 text-end control-label col-form-label"> Вулиця
                                     @if ($errors->has('street'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="street"
-                                        name="street"
-                                    />
+                                <div class="col-sm-3">
+                                    <input class="form-control" type="text" id="street" name="street" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="build_number"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Номер будинку
+                                <label for="build_number" class="col-sm-3 text-end control-label col-form-label">Номер будинку,
                                     @if ($errors->has('build_number'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="build_number"
-                                        name="build_number"
-                                    />
+                                <div class="col-sm-1">
+                                    <input class="form-control" type="text" id="build_number" name="build_number" />
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    for="geo_point"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Індекс
-                                    @if ($errors->has('geo_point'))
-                                        <span class="badge bg-danger">Danger</span>
-                                    @endif
-                                </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="geo_point"
-                                        name="geo_point"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата реєстрації
-                                    <small class="text-muted">dd/mm/yyyy</small>
+                                <label class="col-sm-3 text-end control-label col-form-label">Дата реєстрації -
+                                    {{-- <small class="text-muted"> dd/mm/yyyy </small> --}}
                                     @if ($errors->has('registration_date'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-4">
                                     <input id="registration_date" name="registration_date" type="datetime-local">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата початку
-                                    <small class="text-muted">dd/mm/yyyy</small>
-                                    @if ($errors->has('start_date'))
-                                        <span class="badge bg-danger">Danger</span>
+                                <label for="geo_point" class="col-sm-3 text-end control-label col-form-label">Індекс :
+                                    @if ($errors->has('geo_point'))
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-2">
+                                    <input class="form-control" type="text" id="geo_point" name="geo_point" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-sm-3 text-end control-label col-form-label">Start Date :
+                                    @if ($errors->has('start_date'))
+                                        <span class="badge bg-danger"> Danger </span>
+                                    @endif
+                                </label>
+                                <div class="col-sm-4">
                                     <input id="start_date" name="start_date" type="datetime-local">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата закінчення
-                                    <small class="text-muted">dd/mm/yyyy</small>
-                                    @if ($errors->has('finish_date'))
-                                        <span class="badge bg-danger">Danger</span>
+                                <label for="event_link" class="col-sm-3 text-end control-label col-form-label">Посилання спорт-подію :
+                                    @if ($errors->has('event_link'))
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-8">
+                                    <input class="form-control" type="text" id="event_link" name="event_link" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="end_date" class="col-sm-3 text-end control-label col-form-label"> End Date :
+                                    @if ($errors->has('finish_date'))
+                                        <span class="badge bg-danger"> Danger </span>
+                                    @endif
+                                </label>
+                                <div class="col-sm-4">
                                     <input id="finish_date" name="finish_date" type="datetime-local">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_link"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Посилання на запрошення
-                                    @if ($errors->has('event_link'))
-                                        <span class="badge bg-danger">Danger</span>
-                                    @endif
-                                </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="event_link"
-                                        name="event_link"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    for="event_status"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Статус запрошення
+                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label"> Статус спорт-події
                                     @if ($errors->has('event_status'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="event_status"
-                                        name="event_status"
-                                    />
+                                    <input type="text" class="form-control" id="event_status" name="event_status" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_status"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Зображення лого
+                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Міні лого<b>-></b>
                                     @if ($errors->has('image_intro'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
-                                <div class="col-sm-6">
+                                <div class="col-sm-3">
                                     <input type="file" class="form-control-file" id="image_intro" name="image_intro">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_status"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Зображення головне
-                                    @if ($errors->has('image_full'))
-                                        <span class="badge bg-danger">Danger</span>
+                                <label for="alt_intro" class="col-sm-3 text-end control-label col-form-label"> Текст для зображення логотипу :
+                                    @if ($errors->has('alt_intro'))
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="alt_intro" name="alt_intro" />
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Основне фото->
+                                    @if ($errors->has('image_full'))
+                                        <span class="badge bg-danger"> Danger </span>
+                                    @endif
+                                </label>
+                                <div class="col-sm-3">
                                     <input type="file" class="form-control-file" id="image_full" name="image_full">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="alt_intro"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Текст для зображення логотипу
-                                    @if ($errors->has('alt_intro'))
-                                        <span class="badge bg-danger">Danger</span>
-                                    @endif
-                                </label>
-                                <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="alt_intro"
-                                        name="alt_intro"
-                                    />
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label
-                                    for="alt_full"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Текст для повного зображення
+                                <label for="alt_full" class="col-sm-3 text-end control-label col-form-label"> Текст для повного зображення :
                                     @if ($errors->has('alt_full'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
+                                    <input type="text"
                                         class="form-control"
                                         id="alt_full"
-                                        name="alt_full"
-                                    />
+                                        name="alt_full" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="meta_title"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Мета тег title
+                                <label for="meta_title" class="col-sm-3 text-end control-label col-form-label"> Мета тег title
                                     @if ($errors->has('meta_title'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="meta_title"
-                                        name="meta_title"
-                                    />
+                                    <input class="form-control" type="text" id="meta_title" name="meta_title" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="meta_desc"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Мета тег desc
+                                <label for="meta_desc" class="col-sm-3 text-end control-label col-form-label"> Мета тег desc :
                                     @if ($errors->has('meta_desc'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="meta_desc"
-                                        name="meta_desc"
-                                    />
+                                    <input class="form-control" type="text" id="meta_desc" name="meta_desc" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="rating"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Рейтинг
+                                <label for="rating" class="col-sm-3 text-end control-label col-form-label"> Рейтинг :
                                     @if ($errors->has('rating'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="rating"
-                                        name="rating"
-                                    />
+                                    <input class="form-control" type="text" id="rating" name="rating" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="url"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Посилання сторінки
+                                <label for="url" class="col-sm-3 text-end control-label col-form-label"> Посилання сторінки :
                                     @if ($errors->has('url'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="url"
-                                        name="url"
-                                    />
+                                    <input type="text" class="form-control" id="url" name="url" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label
-                                    for="event_source"
-                                    class="col-sm-3 text-end control-label col-form-label">
-                                    Організатори
+                                <label for="event_source" class="col-sm-3 text-end control-label col-form-label">Організатори :
                                     @if ($errors->has('event_source'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input
-                                        type="text"
-                                        class="form-control"
-                                        id="event_source"
-                                        name="event_source"
-                                    />
+                                    <input class="form-control" type="text" id="event_source" name="event_source" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата запису
-                                    <small class="text-muted">dd/mm/yyyy</small>
+                                <label class="col-sm-3 text-end control-label col-form-label">Дата запису :
                                     @if ($errors->has('created_at'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
@@ -403,22 +287,38 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата редагування
-                                    <small class="text-muted">dd/mm/yyyy</small>
+                                <label class="col-sm-3 text-end control-label col-form-label">Дата редагування :
                                     @if ($errors->has('updated_at'))
-                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-danger"> Danger </span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input id="updated_at" name="updated_at" type="datetime-local">
                                 </div>
                             </div>
+
                         </div>
-                        <div class="border-top">
-                            <div class="card-body">
-                                <button type="button submit" class="btn btn-primary">
-                                    Submit
-                                </button>
+                        <div class="ms-auto text-center">
+                            <p>
+                                <a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+                                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
+                                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+                            </p>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class="card card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    </div>
+                                    </div>
+                                </div>
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                <div class="card card-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                </div>
+                                </div>
+                            </div>
                             </div>
                         </div>
                     </form>
@@ -450,20 +350,14 @@
             </div>
         </form>
         -->
-        <!-- ============================================================== -->
-        <!-- End PAge Content -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Right sidebar -->
-        <!-- ============================================================== -->
-        <!-- .right-sidebar -->
-        <!-- ============================================================== -->
+                    <!-- End Page Content -->
+                <!-- Right sidebar -->
+            <!-- .right-sidebar -->
         <!-- End Right sidebar -->
-        <!-- ============================================================== -->
+
     </div>
-    <!-- ============================================================== -->
+
     <!-- End Container fluid  -->
-    <!-- ============================================================== -->
 
 
 @stop
