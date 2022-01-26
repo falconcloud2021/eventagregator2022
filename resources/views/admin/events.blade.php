@@ -47,17 +47,31 @@
     @endif
     <div class="row">
         <div class="col-12">
-            {{-- 1 Actual Report Events Table --}}
+            <!-- 1 Actual Report Events Table -->
             <div class="card">
                 <div class="card-body">
-                        <h5 class="card-title">1. Список доданних спорт-подій в <strong>Sportcalendar:</strong></h5>
-                        {{-- <form action="{{ route('event_create') }}" method="GET">
-                            @csrf
-                            <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
-                        </form> --}}
+                    <div class="ms-auto text-end">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/events">
+                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!">
+                                    <i class="mdi mdi-bike"></i> Всі події</button>
+                            </a>
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                <i class="mdi mdi-alert-outline"></i> Редактор</button>
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                <i class="mdi mdi-alert-outline"></i> Рейтинг</button>
+                        </div>
+                    </div>
+                    <h5 class="card-title">1. Список доданних спорт-подій в <strong>Sportcalendar:</strong></h5>
+                    <div>
                         <a href="/event/create" >
                             <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
                         </a>
+                    </div>
+                    {{-- <form action="{{ route('event_create') }}" method="GET">
+                        @csrf
+                        <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
+                    </form> --}}
                 </div>
                 <div class="table-responsive">
                     <table class="table">

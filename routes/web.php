@@ -47,11 +47,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
     Route::get('/events/related',               [EventsController::class, 'eventsRelatedFilter'])->name('related_events');
                                     // * 2.2 events CRUD methods;
 	Route::get('/event/create',                 [EventsController::class, 'eventCreateForm'])->name('event_create');
-	// Route::get('/event/edit/{id}',              [EventsController::class, 'eventEditForm'])->name('event_edit');
-	// Route::post('/event/save/{id}',             [EventsController::class, 'eventSaveForm'])->name('event_save');
-    // // Route::post('/event/store/{id}',            [EventsController::class, 'eventStoreForm'])->name('event_store');
-    // Route::any('/event/add-to-archive/{id}',    [EventsController::class, 'eventSendToArchiveForm'])->name('event_archive');
-	// Route::any('/event/delete/{id}',            [EventsController::class, 'eventDeleteForm'])->name('event_delete');
+    Route::post('/event/store',                 [EventsController::class, 'eventStoreForm'])->name('event_store');
+	Route::get('/event/edit/{id}',              [EventsController::class, 'eventEditForm'])->name('event_edit');
+	Route::post('/event/save/{id}',             [EventsController::class, 'eventSaveForm'])->name('event_save');
+    Route::any('/event/add-to-archive/{id}',    [EventsController::class, 'eventSendToArchiveForm'])->name('event_archive');
+	Route::any('/event/delete/{id}',            [EventsController::class, 'eventDeleteForm'])->name('event_delete');
 
     // 3. Parser methods:
     Route::get('/parser',                       [ParserController::class, 'parsedDataList'])->name('parsed');

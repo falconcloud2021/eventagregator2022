@@ -101,8 +101,8 @@ class Events extends Model
         $filename_image_full = md5(microtime() . rand(0, 9999)) . '.' . $data['image_intro']->getClientOriginalExtension();
 
         $data['image_intro']->move(Storage::path('public\image\\').'origin\\' , $filename_image_intro);
-        $data['image_full']->move(Storage::path('public\image\\').'origin\\',$filename_image_full);
- 
+        $data['image_full']->move(Storage::path('public\image\\').'origin\\', $filename_image_full);
+
         $response = DB::table('events')
             ->insert([
                 "event_name"            => $data['event_name'],

@@ -8,8 +8,8 @@
                 <h4 class="page-title">Розділ: "Events Editor!"</h4>
                 <div class="ms-auto text-center">
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-info btn btn-sm text-white" title="Спочатку ознайомтесь з Правилами заповнення картки Спорт-події!" data-toggle="modal" data-target="#exampleModalCenter">
-                        <small>Правила заповнення картки Спорт-події</small></button>
+                    <button type="button" class="btn btn-info btn btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter" title="Спочатку ознайомтесь з Правилами заповнення картки Спорт-події!">
+                        <i class="mdi mdi-alert-outline"></i><span class="hide-menu"><small> Правила заповнення картки Спорт-події</small></span></button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -73,9 +73,14 @@
                     <div class="card-body">
                         <div class="ms-auto text-end">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="/events"><button type="button" class="btn btn-dark">Всі події</button></a>
-                                <button type="button" class="btn btn-dark">Редактор</button>
-                                <button type="button" class="btn btn-dark">Рейтинг</button>
+                                <a href="/events">
+                                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!">
+                                        <i class="mdi mdi-bike"></i> Всі події</button>
+                                </a>
+                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                    <i class="mdi mdi-alert-outline"></i> Редактор</button>
+                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                    <i class="mdi mdi-alert-outline"></i> Рейтинг</button>
                             </div>
                         </div>
                         <h5 class="card-title">1. Форма створення Спорт-події в <strong>Sportcalendar:</strong></h5>
@@ -326,7 +331,9 @@
                         </div>
                         <div class="ms-auto text-center">
                             <p>
-                                <a class="btn btn-success" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Toggle first element</a>
+                                <a href="/event/store">
+                                    <button class="btn btn-success">Створити Спорт-подію!</button>
+                                </a>
                                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
                                 <button class="btn btn-dark" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
                             </p>

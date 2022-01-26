@@ -22,11 +22,8 @@
     <!-- End Bread crumb and right sidebar toggle -->
 
     <!-- Container fluid  -->
-    <!-- ======================================== -->
     <div class="container-fluid">
         <!-- Start Page Content -->
-        <!-- ======================================= -->
-
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title mb-0">Browesr statistics</h5>
@@ -52,12 +49,7 @@
                                             <div class="el-overlay">
                                                 <ul class="list-style-none el-info">
                                                     <li class="el-item">
-                                                        <a class="
-                                                          btn
-                                                          default
-                                                          btn-outline
-                                                          image-popup-vertical-fit
-                                                          el-link
+                                                        <a class="btn default btn-outline image-popup-vertical-fit el-link
                                                         " href="{{ asset('storage/image/origin/'.$value) }}"><i class="mdi mdi-magnify-plus"></i></a>
                                                     </li>
                                                 </ul>
