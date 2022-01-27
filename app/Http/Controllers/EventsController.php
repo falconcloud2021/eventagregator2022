@@ -79,7 +79,7 @@ class EventsController extends Controller
         return view('admin/events', [
             'user' => 'admin',
             'events' => $events,
-            'create' => true
+            'update' => true
         ]);
     }
 

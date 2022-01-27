@@ -7,15 +7,25 @@
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
             <h4 class="page-title">Розділ: "Спорт-події"!</h4>
+            <div class="ms-auto text-center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="/events">
+                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"><i class="mdi mdi-bike"></i>
+                            Всі події</button>
+                    </a>
+                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-cursor-pointer"></i>
+                            Редактор</button>
+                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-comment-processing"></i>
+                            Коменти</button>
+                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-chart-bar"></i>
+                            Звіти</button>
+                </div>
+            </div>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
-                            <h6><i>Dashboard-I</i></h6></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <i class="text-primary"><b>Спорт-події.</b></i>
-                        </li>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><h6><i>Dashboard-I</i></h6></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Спорт-події.</b></i>
                     </ol>
                 </nav>
             </div>
@@ -30,18 +40,14 @@
     @if(isset($delete))
         <div class="card">
             <div class="card-body">
-                <div class="alert alert-success" role="alert">
-                    Видалення успішно виконано !
-                </div>
+                <div class="alert alert-success" role="alert">Видалення успішно виконано !</div>
             </div>
         </div>
     @endif
     @if(isset($create))
         <div class="card">
             <div class="card-body">
-                <div class="alert alert-success" role="alert">
-                    Створення успішно виконано !
-                </div>
+                <div class="alert alert-success" role="alert">Створення успішно виконано !</div>
             </div>
         </div>
     @endif
@@ -50,19 +56,7 @@
             <!-- 1 Actual Report Events Table -->
             <div class="card">
                 <div class="card-body">
-                    <div class="ms-auto text-end">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <a href="/events">
-                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!">
-                                    <i class="mdi mdi-bike"></i> Всі події</button>
-                            </a>
-                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
-                                <i class="mdi mdi-alert-outline"></i> Редактор</button>
-                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
-                                <i class="mdi mdi-alert-outline"></i> Рейтинг</button>
-                        </div>
-                    </div>
-                    <h5 class="card-title">1. Список доданних спорт-подій в <strong>Sportcalendar:</strong></h5>
+                    <h5 class="card-title">1. Список доданних Спорт-подій в <strong>Sportcalendar:</strong></h5>
                     <div>
                         <a href="/event/create" >
                             <button type="submit" class="btn btn-success btn-sm text-white submit">Додати Спорт-подію!</button>
@@ -123,12 +117,39 @@
                                     </td>
                                     <td>{{ $event->street }}</td>
                                     <td>{{ $event->start_date }}</td>
-                                    <td width="40" height="80">
+                                    <td width="30" height="80">
                                         <div>
                                             <ul style="list-style:none;">
-                                                <li><a href="/event/show/{{ $event->id }}"><span class="badge rounded-pill bg-cyan float-end">Show</span></a></li>
-                                                <li><a href="/event/edit/{{ $event->id }}"><span class="badge rounded-pill bg-secondary float-end">Edit</span></a></li>
-                                                <li><a href="/event/delete/{{ $event->id }}"><span class="badge rounded-pill bg-danger float-end">Delete</span></a></li>
+                                                <li><a href="/event/show/{{ $event->id }}"><span class="badge rounded-pill bg-cyan float-end"><i class="mdi mdi-step-forward"></i>Show</span></a></li>
+                                                <li><a href="/event/edit/{{ $event->id }}"><span class="badge rounded-pill bg-secondary float-end"><i class="mdi mdi-grease-pencil"></i>Edit</span></a></li>
+                                                <!-- Button trigger modal -->
+                                                <li>
+                                                    <button type="button" data-toggle="modal" data-target="#exampleModalCenter">
+                                                        <span class="badge rounded-pill bg-danger float-end"><i class="mdi mdi-archive"></i>Delete</span>
+                                                    </button>
+                                                </li>
+                                                <!-- Modal Delete Button -->
+                                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                                        <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            ...
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Відміна</button>
+                                                            <a href="/event/add-to-archive/{{ $event->id }}"><i class="mdi mdi-grease-pencil"></i>
+                                                                <button type="submit" class="btn btn-danger">Видалити подію</button>
+                                                            </a>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </ul>
                                         </div>
                                     </td>
@@ -136,16 +157,20 @@
                                 @endforeach
                         </tbody>
                     </table>
-                    {{ $events->onEachSide(5)->links('pagination::bootstrap-4') }}
-                    <div style="text-align:center; padding-right: 10px; padding-left: 900px">
-                        <p class="text-white-50 bg-dark"><i>Загальна кількість подій в базі </i><b> Sportcalendar: <span class="text-white">{{ $events->total() }}</span></b></p>
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <div class="ms-auto text-center"> {{ $events->onEachSide(5)->links('pagination::bootstrap-4') }} </div>
+                        <div class="ms-auto text-center">
+                            <blockquote class="blockquote">
+                                <p><i>Загальна кількість подій в базі </i><b> Sportcalendar: </b><span class="h4">{{ $events->total() }}</span></p>
+                            </blockquote>
+                        </div>
                     </div>
                 </div>
             </div>
             {{-- 2 TOP Report Events Table --}}
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">2. Топові події - "TOP Chart"! :</h5>
+                    <h5 class="card-title">2. Топові Спорт-події - "TOP Chart"! :</h5>
                     <div class="table-responsive">
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
@@ -158,7 +183,6 @@
                                     <th>Фото події</th>
                                     <th>Адреса</th>
                                     <th>Дата</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -192,30 +216,26 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        {{ $events->onEachSide(5)->links('pagination::bootstrap-4') }}
-                        <div style="text-align:center; padding-right: 10px; padding-left: 820px">
-                            <p class="text-white-50 bg-dark"><i>Окремий список ТОПових подій, загальна кількість: </i><b><span class="text-white">{{ $events->total() }}</span></b>.</p>
+                        <div class="col-12 d-flex no-block align-items-center">
+                            <div class="ms-auto text-center"> {{ $events->onEachSide(5)->links('pagination::bootstrap-4') }} </div>
+                            <div class="ms-auto text-center">
+                                <blockquote class="blockquote">
+                                    <p><i>Перелік ТОПових подій, загальна кількість: </i><span class="h4"> {{ $events->total() }} </span></p>
+                                </blockquote>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ============================================================== -->
     <!-- End PAge Content -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
     <!-- Right sidebar -->
-    <!-- ============================================================== -->
     <!-- .right-sidebar -->
-    <!-- ============================================================== -->
     <!-- End Right sidebar -->
-    <!-- ============================================================== -->
 
 </div>
-<!-- ============================================================== -->
 <!-- End Container fluid  -->
-<!-- ============================================================== -->
 
 
 @stop

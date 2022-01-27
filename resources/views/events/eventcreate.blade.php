@@ -7,27 +7,18 @@
             <div class="col-12 d-flex no-block align-items-center">
                 <h4 class="page-title">Розділ: "Events Editor!"</h4>
                 <div class="ms-auto text-center">
-                <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-info btn btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter" title="Спочатку ознайомтесь з Правилами заповнення картки Спорт-події!">
-                        <i class="mdi mdi-alert-outline"></i><span class="hide-menu"><small> Правила заповнення картки Спорт-події</small></span></button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                            </div>
+                    <div class="ms-auto text-end">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <a href="/events">
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!">
+                                <i class="mdi mdi-bike"></i> Всі події</button>
+                            </a>
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                <i class="mdi mdi-cursor-pointer"></i> Редактор</button>
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                <i class="mdi mdi-comment-processing"></i> Коменти</button>
+                            <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
+                                <i class="mdi mdi-chart-bar"></i> Звіти</button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +28,7 @@
                             <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
                             <h6><i>Dashboard-I</i></h6></a></li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                <i class="text-primary"><b>Створення Спорт-події.</b></i>
+                                <i class="text-primary"><b>Картка Спорт-події.</b></i>
                         </ol>
                     </nav>
                 </div>
@@ -70,29 +61,37 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-body">
-                        <div class="ms-auto text-end">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="/events">
-                                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!">
-                                        <i class="mdi mdi-bike"></i> Всі події</button>
-                                </a>
-                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
-                                    <i class="mdi mdi-alert-outline"></i> Редактор</button>
-                                <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom">
-                                    <i class="mdi mdi-alert-outline"></i> Рейтинг</button>
-                            </div>
-                        </div>
-                        <h5 class="card-title">1. Форма створення Спорт-події в <strong>Sportcalendar:</strong></h5>
-                    </div>
                     <form class="form-horizontal" action="/event/store" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="card-body">
-                            <h4 class="card-title"> Створення події </h4>
+                            <h4 class="card-title"> Картка створення Спорт-події </h4>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-info btn btn-sm text-white" data-toggle="modal" data-target="#exampleModalCenter" title="Спочатку ознайомтесь з Правилами заповнення картки Спорт-події!">
+                                <i class="mdi mdi-alert-outline"></i><span class="hide-menu"><small> Правила заповнення картки Спорт-події</small></span></button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ...
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group row">
-                                <label for="event_name" class="col-sm-3 text-end control-label col-form-label"> Назва Спорт-події :
+                                <label for="event_name" class="col-sm-3 text-end control-label col-form-label">Назва Спорт-події :
                                     @if ($errors->has('event_name'))
-                                        <span class="badge bg-danger"> Danger </span>
+                                        <span class="badge bg-danger">* Заповніть поле</span>
                                     @endif
                                 </label>
                                 <div class="col-sm-8">
@@ -100,17 +99,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_type" class="col-sm-3 text-end control-label col-form-label"> Тип Спорт-події :
+                                <label for="event_type" class="col-sm-3 text-end control-label col-form-label">Тип Спорт-події :
                                     @if ($errors->has('event_type'))
-                                        <span class="badge bg-danger"> Danger </span>
+                                        <span class="badge bg-danger">* Заповніть поле</span>
                                     @endif
                                 </label>
                                 <div class="col-sm-3">
                                     <input class="form-control" type="text" id="event_type" name="event_type" />
                                 </div>
-                                <label for="category_id" class="col-sm-2 text-end control-label col-form-label"> Id категорії :
+                                <label for="category_id" class="col-sm-2 text-end control-label col-form-label">Id категорії :
                                     @if ($errors->has('category_id'))
-                                        <span class="badge bg-danger"> Danger </span>
+                                        <span class="badge bg-danger">* Заповніть поле</span>
                                     @endif
                                 </label>
                                 <div class="col-sm-2">
@@ -118,9 +117,9 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_description" class="col-sm-3 text-end control-label col-form-label"> Опис Спорт-події:
+                                <label for="event_description" class="col-sm-3 text-end control-label col-form-label">Опис Спорт-події:
                                     @if ($errors->has('event_description'))
-                                        <span class="badge bg-danger"> Danger </span>
+                                        <span class="badge bg-danger">* Заповніть поле</span>
                                     @endif
                                 </label>
                                 <div class="col-sm-8">
@@ -128,57 +127,45 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="city" class="col-sm-3 text-end control-label col-form-label"> Місто
-                                    @if ($errors->has('city'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="city" class="col-sm-3 text-end control-label col-form-label">Місто
+                                    @if ($errors->has('city')) <span class="badge bg-danger">* Заповніть поле</span> @endif
                                 </label>
                                 <div class="col-sm-2">
                                     <input class="form-control" type="text" id="city" name="city" />
                                 </div>
-                                <label for="street" class="col-sm-2 text-end control-label col-form-label"> Вулиця
-                                    @if ($errors->has('street'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="street" class="col-sm-2 text-end control-label col-form-label">Вулиця
+                                    @if ($errors->has('street')) <span class="badge bg-danger">* Заповніть поле</span> @endif
                                 </label>
                                 <div class="col-sm-3">
                                     <input class="form-control" type="text" id="street" name="street" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="build_number" class="col-sm-3 text-end control-label col-form-label">Номер будинку,
-                                    @if ($errors->has('build_number'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="build_number" class="col-sm-3 text-end control-label col-form-label">Номер будинку
+                                    @if ($errors->has('build_number')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-1">
                                     <input class="form-control" type="text" id="build_number" name="build_number" />
                                 </div>
-                                <label class="col-sm-3 text-end control-label col-form-label">Дата реєстрації -
+                                <label class="col-sm-3 text-end control-label col-form-label">Дата реєстрації* :
                                     {{-- <small class="text-muted"> dd/mm/yyyy </small> --}}
-                                    @if ($errors->has('registration_date'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('registration_date')) <span class="badge bg-danger">* Введіть дату</span> @endif
                                 </label>
                                 <div class="col-sm-4">
                                     <input id="registration_date" name="registration_date" type="datetime-local">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="geo_point" class="col-sm-3 text-end control-label col-form-label">Індекс :
-                                    @if ($errors->has('geo_point'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="geo_point" class="col-sm-3 text-end control-label col-form-label">Geo point :
+                                    @if ($errors->has('geo_point')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-2">
                                     <input class="form-control" type="text" id="geo_point" name="geo_point" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-sm-3 text-end control-label col-form-label">Start Date :
-                                    @if ($errors->has('start_date'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label class="col-sm-3 text-end control-label col-form-label">Start Date* :
+                                    @if ($errors->has('start_date')) <span class="badge bg-danger">* Введіть дату</span> @endif
                                 </label>
                                 <div class="col-sm-4">
                                     <input id="start_date" name="start_date" type="datetime-local">
@@ -186,29 +173,23 @@
                             </div>
                             <div class="form-group row">
                                 <label for="event_link" class="col-sm-3 text-end control-label col-form-label">Посилання Спорт-подію :
-                                    @if ($errors->has('event_link'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('event_link')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-8">
                                     <input class="form-control" type="text" id="event_link" name="event_link" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="end_date" class="col-sm-3 text-end control-label col-form-label"> End Date :
-                                    @if ($errors->has('finish_date'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="end_date" class="col-sm-3 text-end control-label col-form-label">Finish Date* :
+                                    @if ($errors->has('finish_date')) <span class="badge bg-danger">* Введіть дату</span> @endif
                                 </label>
                                 <div class="col-sm-4">
                                     <input id="finish_date" name="finish_date" type="datetime-local">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label"> Статус Спорт-події
-                                    @if ($errors->has('event_status'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Статус Спорт-події
+                                    @if ($errors->has('event_status')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="event_status" name="event_status" />
@@ -216,19 +197,15 @@
                             </div>
                             <div class="form-group row">
                                 <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Міні лого<b>-></b>
-                                    @if ($errors->has('image_intro'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('image_intro')) <span class="badge bg-danger">* Додайте лого</span> @endif
                                 </label>
                                 <div class="col-sm-3">
                                     <input type="file" class="form-control-file" id="image_intro" name="image_intro">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="alt_intro" class="col-sm-3 text-end control-label col-form-label"> Текст для зображення логотипу :
-                                    @if ($errors->has('alt_intro'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="alt_intro" class="col-sm-3 text-end control-label col-form-label">Текст для зображення логотипу :
+                                    @if ($errors->has('alt_intro')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="alt_intro" name="alt_intro" />
@@ -236,41 +213,32 @@
                             </div>
                             <div class="form-group row">
                                 <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Основне фото->
-                                    @if ($errors->has('image_full'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('image_full')) <span class="badge bg-danger">* Додайте фото</span> @endif
                                 </label>
                                 <div class="col-sm-3">
                                     <input type="file" class="form-control-file" id="image_full" name="image_full">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="alt_full" class="col-sm-3 text-end control-label col-form-label"> Текст для повного зображення :
-                                    @if ($errors->has('alt_full'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="alt_full" class="col-sm-3 text-end control-label col-form-label">Текст для повного зображення :
+                                    @if ($errors->has('alt_full')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
-                                    <input type="text"
-                                        class="form-control"
-                                        id="alt_full"
-                                        name="alt_full" />
+                                    <input type="text" class="form-control" id="alt_full" name="alt_full" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="meta_title" class="col-sm-3 text-end control-label col-form-label"> Мета тег title
-                                    @if ($errors->has('meta_title'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="meta_title" class="col-sm-3 text-end control-label col-form-label">Мета тег title
+                                    @if ($errors->has('meta_title')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input class="form-control" type="text" id="meta_title" name="meta_title" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="meta_desc" class="col-sm-3 text-end control-label col-form-label"> Мета тег desc :
+                                <label for="meta_desc" class="col-sm-3 text-end control-label col-form-label">Мета тег desc :
                                     @if ($errors->has('meta_desc'))
-                                        <span class="badge bg-danger"> Danger </span>
+                                        <span class="badge bg-danger">Danger</span>
                                     @endif
                                 </label>
                                 <div class="col-sm-6">
@@ -278,20 +246,16 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="rating" class="col-sm-3 text-end control-label col-form-label"> Рейтинг :
-                                    @if ($errors->has('rating'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="rating" class="col-sm-3 text-end control-label col-form-label">Рейтинг :
+                                    @if ($errors->has('rating')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input class="form-control" type="text" id="rating" name="rating" />
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="url" class="col-sm-3 text-end control-label col-form-label"> Посилання сторінки :
-                                    @if ($errors->has('url'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                <label for="url" class="col-sm-3 text-end control-label col-form-label">Посилання сторінки :
+                                    @if ($errors->has('url')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="url" name="url" />
@@ -299,9 +263,7 @@
                             </div>
                             <div class="form-group row">
                                 <label for="event_source" class="col-sm-3 text-end control-label col-form-label">Організатори :
-                                    @if ($errors->has('event_source'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('event_source')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input class="form-control" type="text" id="event_source" name="event_source" />
@@ -309,9 +271,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 text-end control-label col-form-label">Дата запису :
-                                    @if ($errors->has('created_at'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('created_at')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input id="created_at" name="created_at" type="datetime-local">
@@ -319,9 +279,7 @@
                             </div>
                             <div class="form-group row">
                                 <label class="col-sm-3 text-end control-label col-form-label">Дата редагування :
-                                    @if ($errors->has('updated_at'))
-                                        <span class="badge bg-danger"> Danger </span>
-                                    @endif
+                                    @if ($errors->has('updated_at')) <span class="badge bg-danger">Danger</span> @endif
                                 </label>
                                 <div class="col-sm-6">
                                     <input id="updated_at" name="updated_at" type="datetime-local">
@@ -345,13 +303,13 @@
                                     </div>
                                     </div>
                                 </div>
-                            <div class="col">
-                                <div class="collapse multi-collapse" id="multiCollapseExample2">
-                                <div class="card card-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                <div class="col">
+                                    <div class="collapse multi-collapse" id="multiCollapseExample2">
+                                    <div class="card card-body">
+                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                    </div>
+                                    </div>
                                 </div>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </form>

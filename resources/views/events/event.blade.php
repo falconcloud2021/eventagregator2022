@@ -5,14 +5,14 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-12 d-flex no-block align-items-center">
-                <h4 class="page-title">Events Reports</h4>
+                <h4 class="page-title">Картка Спорт-події</h4>
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
+                            <h6><i>Dashboard-I</i></h6></a></li>
                             <li class="breadcrumb-item active" aria-current="page">
-                                Library
-                            </li>
+                                <i class="text-primary"><b>Картка події.</b></i>
                         </ol>
                     </nav>
                 </div>
