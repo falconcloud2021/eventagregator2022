@@ -6,16 +6,38 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Розділ: Dashboard-I</h4>
+            <h4 class="page-title">Dashboard-I</h4>
+            <div class="ms-auto text-center">
+                <div class="btn-group" role="group" aria-label="Basic example">
+
+                    <button type="button" class="btn btn-dark btn btn-sm d-flex align-items-center text-white dropdown-toggle" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-bike"></i>
+                                Всі події</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+
+                    <button type="button" class="btn btn-dark btn btn-sm d-flex align-items-center text-white dropdown-toggle" data-placement="bottom" title="Tooltip on bottom"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-cursor-pointer"></i>
+                                Редактор</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                </div>
+            </div>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
-                            <h6><i>Dashboard-I</i></h6></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <i class="text-primary"><b>Основна.</b></i>
-                        </li>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><i class="mdi mdi-view-dashboard"></i></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>..</b></i>
                     </ol>
                 </nav>
             </div>
@@ -23,58 +45,55 @@
     </div>
 </div>
 <!-- End Bread crumb and right sidebar toggle -->
-
 <!-- Start HTML Calendar -->
-    <div class="s002">
-      <form>
+<div class="s002">
+    <form>
         <div class="inner-form">
-          <div class="input-field first-wrap">
+            <div class="input-field first-wrap">
             <div class="icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
-              </svg>
+                </svg>
             </div>
             <input id="search" type="text" placeholder="Напишіть що хочете знайти?" />
-          </div>
-          <div class="input-field second-wrap">
+            </div>
+            <div class="input-field second-wrap">
             <div class="icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
-              </svg>
+                </svg>
             </div>
             <input class="datepicker" id="depart" type="text" placeholder="29 Сер 2021" />
-          </div>
-          <div class="input-field third-wrap">
+            </div>
+            <div class="input-field third-wrap">
             <div class="icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"></path>
-              </svg>
+                </svg>
             </div>
             <input class="datepicker" id="return" type="text" placeholder="30 Січ 2022" />
-          </div>
-          <div class="input-field fouth-wrap">
+            </div>
+            <div class="input-field fouth-wrap">
             <div class="icon-wrap">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
-              </svg>
+                </svg>
             </div>
             <select data-trigger="" name="choices-single-defaul">
-              <option placeholder="">2 Пункт</option>
-              <option>3 Пункт</option>
-              {{-- <option>4 Adults</option>
-              <option>5 Adults</option> --}}
+                <option placeholder="">2 Пункт</option>
+                <option>3 Пункт</option>
+                {{-- <option>4 Adults</option>
+                <option>5 Adults</option> --}}
             </select>
-          </div>
-          <div class="input-field fifth-wrap">
+            </div>
+            <div class="input-field fifth-wrap">
             <button class="btn-search" type="button">Пошук</button>
-          </div>
+            </div>
         </div>
-      </form>
-    </div>
+    </form>
+</div>
  <!-- End HTML Calendar -->
-
  <!-- Start Container fluid  -->
- <!-- ================================= -->
  <div class="container-fluid">
     <!-- START Column!!! -->
      <div class="row">
@@ -210,7 +229,6 @@
          </div>
      </div>
      <!-- END Column!!! -->
-     <!-- ================================= -->
      <!-- Start Sales chart -->
      <div class="row">
          <div class="col-md-12">
@@ -281,7 +299,6 @@
              </div>
          </div>
      </div>
-     <!-- ================================= -->
      <!-- End Sales chart -->
 
      <!-- Recent comment and chats -->
@@ -899,7 +916,6 @@
      <!-- Recent comment and chats -->
  </div>
  <!-- End Container fluid  -->
- <!-- ================================= -->
 
 
 @stop

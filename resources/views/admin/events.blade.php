@@ -6,26 +6,38 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Розділ: "Спорт-події"!</h4>
+            <h5 class="page-title">Спорт-події</h5>
             <div class="ms-auto text-center">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="/events">
-                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"><i class="mdi mdi-bike"></i>
-                            Всі події</button>
-                    </a>
-                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-cursor-pointer"></i>
-                            Редактор</button>
-                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-comment-processing"></i>
-                            Коменти</button>
-                    <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-chart-bar"></i>
-                            Звіти</button>
+
+                    <button type="button" class="btn btn-dark btn btn-sm d-flex align-items-center text-white dropdown-toggle" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-bike"></i>
+                                Всі події</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+
+                    <button type="button" class="btn btn-dark btn btn-sm d-flex align-items-center text-white dropdown-toggle" data-placement="bottom" title="Tooltip on bottom"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="mdi mdi-cursor-pointer"></i>
+                                Редактор</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                    <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
                 </div>
             </div>
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><h6><i>Dashboard-I</i></h6></a></li>
-                        <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Спорт-події.</b></i>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><i class="mdi mdi-view-dashboard"></i></a></li>
+                        <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Всі події.</b></i>
                     </ol>
                 </nav>
             </div>
@@ -36,6 +48,77 @@
 
 <!-- Container fluid  -->
 <div class="container-fluid">
+    <!-- Start Sales chart -->
+     <div class="row">
+         <div class="col-md-12">
+             <div class="card">
+                 <div class="card-body">
+                     <div class="d-md-flex align-items-center">
+                         <div>
+                             <h4 class="card-title">Site Analysis</h4>
+                             <h5 class="card-subtitle">Overview of Latest Month</h5>
+                         </div>
+                     </div>
+                     <div class="row">
+                         <!-- Start columns Blocks -->
+                         <div class="col-lg-9">
+                             <div class="flot-chart">
+                                 <div class="flot-chart-content" id="flot-line-chart"></div>
+                             </div>
+                         </div>
+                         <div class="col-lg-3">
+                             <div class="row">
+                                 <div class="col-6">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-account fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">2540</h5>
+                                         <small class="font-light">Total Users</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-6">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-plus fs-3 font-16"></i>
+                                         <h5 class="mb-0 mt-1">120</h5>
+                                         <small class="font-light">New Users</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-6 mt-3">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-cart fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">656</h5>
+                                         <small class="font-light">Total Shop</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-6 mt-3">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-tag fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">9540</h5>
+                                         <small class="font-light">Total Orders</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-6 mt-3">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-table fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">100</h5>
+                                         <small class="font-light">Pending Orders</small>
+                                     </div>
+                                 </div>
+                                 <div class="col-6 mt-3">
+                                     <div class="bg-dark p-10 text-white text-center">
+                                         <i class="mdi mdi-web fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">8540</h5>
+                                         <small class="font-light">Online Orders</small>
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                         <!-- End columns blocks -->
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <!-- End Sales chart -->
     <!-- Start Page Content -->
     @if(isset($delete))
         <div class="card">
@@ -236,6 +319,78 @@
 
 </div>
 <!-- End Container fluid  -->
+<!-- Start Container fluid  -->
+ <div class="container-fluid">
+    <!-- START Column!!! -->
+     <div class="row">
+         <!-- Column Users -->
+         <div class="col-md-6 col-lg-2 col-xlg-3" >
+            <a href="/users">
+             <div class="card card-hover">
+                 <div class="box bg-info text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
+                     <h6 class="text-white">Користувачі</h6>
+                 </div>
+             </div>
+             </a>
+         </div>
+         <!-- Column Partners -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/partners">
+             <div class="card card-hover">
+                 <div class="box bg-primary text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
+                     <h6 class="text-white">Партнери</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
+         <!-- Column Organizer -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/organizer">
+             <div class="card card-hover">
+                 <div class="box bg-dark text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
+                     <h6 class="text-white">Органайзер</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
+         <!-- Column Dashboard2 -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/dashboard2">
+             <div class="card card-hover">
+                 <div class="box bg-success text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                     <h6 class="text-white">Dashboard-II</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
+         <!-- Column Bells -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/bells">
+             <div class="card card-hover">
+                 <div class="box bg-cyan text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
+                     <h6 class="text-white">Повідомлення</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
+         <!-- Column Letters -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/letters">
+             <div class="card card-hover">
+                 <div class="box bg-secondary text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
+                     <h6 class="text-white">Пошта</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
+     </div>
+     <!-- END Column!!! -->
 
 
 @stop

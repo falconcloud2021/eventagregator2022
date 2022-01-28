@@ -1882,8 +1882,12 @@ span.flatpickr-weekday {
     border: 0;
     background: #fff;
     padding: 10px 15px;
-    border-radius: 0;
+    border-radius: 1px;
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    -ms-border-radius: 1px;
+    -o-border-radius: 1px;
 }
 
 .s002 form .inner-form .input-field.fouth-wrap .choices__list.choices__list--dropdown .choices__item--selectable {
@@ -1913,7 +1917,7 @@ span.flatpickr-weekday {
     width: 100%;
     background: #31101b;
     white-space: nowrap;
-    border-radius: .5px;
+    border-radius: 7px;
     font-size: 20px;
     color: #fff;
     transition: all .2s ease-out, color .2s ease-out;
@@ -1921,10 +1925,14 @@ span.flatpickr-weekday {
     cursor: pointer;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
 }
 
 .s002 form .inner-form .input-field.fifth-wrap .btn-search:hover {
-    background: #af7d51;
+    background: #4cdb28;
 }
 
 @media screen and (max-width: 992px) {
@@ -1940,7 +1948,7 @@ span.flatpickr-weekday {
         justify-content: space-between;
     }
     .s002 form .inner-form .input-field {
-        margin-bottom: 15px;
+        margin-bottom: 1px;
     }
     .s002 form .inner-form .input-field.first-wrap {
         width: 100%;

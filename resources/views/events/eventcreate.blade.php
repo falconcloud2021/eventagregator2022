@@ -25,10 +25,9 @@
                 <div class="ms-auto text-end">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
-                            <h6><i>Dashboard-I</i></h6></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">
-                                <i class="text-primary"><b>Картка Спорт-події.</b></i>
+                            <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><i class="mdi mdi-view-dashboard"></i></a></li>
+                            <li class="breadcrumb-item"><a href="/events" title="Перехід до загального списку подій"><i class="mdi mdi-bike"></i></a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Нова подія.</b></i></li>
                         </ol>
                     </nav>
                 </div>
@@ -293,7 +292,7 @@
                                     <button class="btn btn-success">Створити Спорт-подію!</button>
                                 </a>
                                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-                                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
+                                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Відміна</button>
                             </p>
                             <div class="row">
                                 <div class="col">
