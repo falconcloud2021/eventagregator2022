@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\ParserController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\PartnersController;
@@ -52,7 +53,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 	Route::post('/event/save/{id}',             [EventsController::class, 'eventSaveForm'])->name('event_save');
     Route::any('/event/add-to-archive/{id}',    [EventsController::class, 'eventSendToArchiveForm'])->name('event_archive');
 	Route::any('/event/delete/{id}',            [EventsController::class, 'eventDeleteForm'])->name('event_delete');
-
+                                    // * 2.3 CategoriesEvents SHOW\CRUD methods;
+    Route::get('/categories/categories-types',  [CategoriesController::class, 'showCategoriesTypes'])->name('categoryType');
+    Route::post('/categories/store-category',   [CategoriesController::class, 'storeCategory'])->name('storeCategory');
+    Route::post('/categories/store-type',       [CategoriesController::class, 'storeTypes'])->name('storeType');
+    Route::any('/category/delete/{id}',         [CategoriesController::class, 'deleteCategory'])->name('categoryDelete');
+    Route::any('/type/delete/{id}',             [CategoriesController::class, 'deleteType'])->name('typeDelete');
     // 3. Parser methods:
     Route::get('/parser',                       [ParserController::class, 'parsedDataList'])->name('parsed');
     Route::get('/parser/show/{id}',             [ParserController::class, 'parseShowItem']);

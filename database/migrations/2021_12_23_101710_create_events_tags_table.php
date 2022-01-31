@@ -15,6 +15,7 @@ class CreateEventsTagsTable extends Migration
     {
         Schema::create('events_tags', function (Blueprint $table) {
             $table->id();
+            $table->char('tag_name')->nullable();
             $table->timestamps();
         });
     }

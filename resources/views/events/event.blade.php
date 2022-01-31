@@ -7,7 +7,7 @@
             <div class="col-12 d-flex no-block align-items-center">
                 <h4 class="page-title">Картка Спорт-події</h4>
                 <div class="ms-auto text-center">
-                <div class="btn-group" role="group" aria-label="Basic example">
+                    <div class="btn-group" role="group" aria-label="Basic example">
                         <a href="/events">
                         <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"><i class="mdi mdi-bike"></i>
                                 Всі події</button>

@@ -85,6 +85,14 @@ class EventsController extends Controller
 
     public function eventStoreForm(Request $request)
     {
+        $eventModel = new Events();
+        $events = $eventModel->getEvents();
+        return view('admin/events', [
+            'user' => 'admin',
+            'events' => $events,
+            'create' => true
+        ]);
+
         $request->validate([
             'event_name' => 'required',
             'event_type' => 'required',
@@ -109,13 +117,8 @@ class EventsController extends Controller
         $eventModel = new Events();
         $eventModel->createEvent($request);
 
-        $eventModel = new Events();
-        $events = $eventModel->getEvents();
-        return view('admin/events', [
-            'user' => 'admin',
-            'events' => $events,
-            'create' => true
-        ]);
+        return Redirect()->back();
+
     }
 
     public function eventDeleteForm($id)

@@ -6,7 +6,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Розділ: "Server"!</h4>
+            <h4 class="page-title">ServerLog</h4>
             <div class="ms-auto text-center">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <a href="/events">
@@ -32,7 +32,8 @@
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><i class="mdi mdi-view-dashboard"></i></a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
+                            <img src="/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" width="12" /></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Server.</b></i>
                     </ol>
                 </nav>

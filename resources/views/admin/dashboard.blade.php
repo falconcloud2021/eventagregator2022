@@ -36,7 +36,8 @@
             <div class="ms-auto text-end">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну"><i class="mdi mdi-view-dashboard"></i></a></li>
+                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
+                            <img src="/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" width="12" /></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>..</b></i>
                     </ol>
                 </nav>
@@ -102,9 +103,7 @@
             <a href="/events">
              <div class="card card-hover">
                  <div class="box bg-success text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-bike"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-bike"></i></h1>
                      <h6 class="text-white">Спортивні події</h6>
                  </div>
              </div>
@@ -115,9 +114,7 @@
             <a href="/parser">
              <div class="card card-hover">
                  <div class="box bg-cyan text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-arrow-all"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
                      <h6 class="text-white">Парсер</h6>
                  </div>
              </div>
@@ -128,9 +125,7 @@
             <a href="/charts">
              <div class="card card-hover">
                  <div class="box bg-warning text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-chart-areaspline"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
                      <h6 class="text-white">Графіки</h6>
                  </div>
              </div>
@@ -141,9 +136,7 @@
             <a href="/widgets">
              <div class="card card-hover">
                  <div class="box bg-danger text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-collage"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
                      <h6 class="text-white">Віджети</h6>
                  </div>
              </div>
@@ -154,9 +147,7 @@
             <a href="/users">
              <div class="card card-hover">
                  <div class="box bg-info text-center">
-                     <h1 class="font-light text-white">
-                        <i class="mdi mdi-calendar-check"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-calendar-check"></i></h1>
                      <h6 class="text-white">Користувачі</h6>
                  </div>
              </div>
@@ -167,9 +158,7 @@
             <a href="/partners">
              <div class="card card-hover">
                  <div class="box bg-primary text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-relative-scale"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
                      <h6 class="text-white">Партнери</h6>
                  </div>
              </div>
@@ -180,9 +169,7 @@
             <a href="/organizer">
              <div class="card card-hover">
                  <div class="box bg-dark text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-border-outside"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
                      <h6 class="text-white">Органайзер</h6>
                  </div>
              </div>
@@ -193,9 +180,7 @@
             <a href="/dashboard2">
              <div class="card card-hover">
                  <div class="box bg-success text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-view-dashboard"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
                      <h6 class="text-white">Dashboard-II</h6>
                  </div>
              </div>
@@ -206,9 +191,7 @@
             <a href="/bells">
              <div class="card card-hover">
                  <div class="box bg-cyan text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-email-outline"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
                      <h6 class="text-white">Повідомлення</h6>
                  </div>
              </div>
@@ -219,9 +202,7 @@
             <a href="/letters">
              <div class="card card-hover">
                  <div class="box bg-secondary text-center">
-                     <h1 class="font-light text-white">
-                         <i class="mdi mdi-email-outline"></i>
-                     </h1>
+                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
                      <h6 class="text-white">Пошта</h6>
                  </div>
              </div>
@@ -250,45 +231,33 @@
                          <div class="col-lg-3">
                              <div class="row">
                                  <div class="col-6">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-account fs-3 mb-1 font-16"></i>
-                                         <h5 class="mb-0 mt-1">2540</h5>
-                                         <small class="font-light">Total Users</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-account fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">2540</h5><small class="font-light">Total Users</small>
                                      </div>
                                  </div>
                                  <div class="col-6">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-plus fs-3 font-16"></i>
-                                         <h5 class="mb-0 mt-1">120</h5>
-                                         <small class="font-light">New Users</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-plus fs-3 font-16"></i>
+                                         <h5 class="mb-0 mt-1">120</h5><small class="font-light">New Users</small>
                                      </div>
                                  </div>
                                  <div class="col-6 mt-3">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-cart fs-3 mb-1 font-16"></i>
-                                         <h5 class="mb-0 mt-1">656</h5>
-                                         <small class="font-light">Total Shop</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-cart fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">656</h5><small class="font-light">Total Shop</small>
                                      </div>
                                  </div>
                                  <div class="col-6 mt-3">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-tag fs-3 mb-1 font-16"></i>
-                                         <h5 class="mb-0 mt-1">9540</h5>
-                                         <small class="font-light">Total Orders</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-tag fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">9540</h5><small class="font-light">Total Orders</small>
                                      </div>
                                  </div>
                                  <div class="col-6 mt-3">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-table fs-3 mb-1 font-16"></i>
-                                         <h5 class="mb-0 mt-1">100</h5>
-                                         <small class="font-light">Pending Orders</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-table fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">100</h5><small class="font-light">Pending Orders</small>
                                      </div>
                                  </div>
                                  <div class="col-6 mt-3">
-                                     <div class="bg-dark p-10 text-white text-center">
-                                         <i class="mdi mdi-web fs-3 mb-1 font-16"></i>
-                                         <h5 class="mb-0 mt-1">8540</h5>
-                                         <small class="font-light">Online Orders</small>
+                                     <div class="bg-dark p-10 text-white text-center"><i class="mdi mdi-web fs-3 mb-1 font-16"></i>
+                                         <h5 class="mb-0 mt-1">8540</h5><small class="font-light">Online Orders</small>
                                      </div>
                                  </div>
                              </div>
@@ -314,7 +283,6 @@
                      <div class="d-flex flex-row comment-row mt-0">
                          <div class="p-2">
                              <img src="/admin/assets/images/users/1.jpg" alt="user" width="50" class="rounded-circle" />
-
                          </div>
                          <div class="comment-text w-100">
                              <h6 class="font-medium">James Anderson</h6>
