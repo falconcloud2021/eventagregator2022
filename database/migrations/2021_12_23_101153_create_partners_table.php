@@ -15,7 +15,12 @@ class CreatePartnersTable extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->char('partner_name')->nullable();
+            $table->char('partner_lastname')->nullable();
+            $table->char('header_partner')->nullable();
+            $table->char('partner_address')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

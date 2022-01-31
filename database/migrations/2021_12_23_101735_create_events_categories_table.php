@@ -15,10 +15,11 @@ class CreateEventsCategoriesTable extends Migration
     {
         Schema::create('events_categories', function (Blueprint $table) {
             $table->id();
+            $table->integer('events_id')->nullable();
             $table->char('category_name')->nullable();
             $table->char('category_img')->nullable();
-            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

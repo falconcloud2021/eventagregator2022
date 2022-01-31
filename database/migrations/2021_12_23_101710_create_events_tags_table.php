@@ -17,6 +17,7 @@ class CreateEventsTagsTable extends Migration
             $table->id();
             $table->char('tag_name')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

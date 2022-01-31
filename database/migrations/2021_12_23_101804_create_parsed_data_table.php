@@ -15,21 +15,22 @@ class CreateParsedDataTable extends Migration
     {
         Schema::create('parsed_data', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('parse_event_name')->nullable();
-            $table->string('parse_event_type')->nullable();
-            $table->string('parse_event_category')->nullable();
-            $table->text('parse_event_description')->nullable();
-            $table->string('parse_event_link')->nullable();
-            $table->string('parse_geo_point')->nullable();
-            $table->string('parse_city')->nullable();
-            $table->string('parse_street')->nullable();
-            $table->string('parse_build_number')->nullable();
-            $table->string('parse_event_photo')->nullable();
-            $table->string('parse_source')->nullable();
-            $table->dateTime('parse_registration_date')->nullable();
-            $table->dateTime('parse_start_date');
-            $table->dateTime('parse_finish_date');
+            $table->string('parsed_event_name')->nullable();
+            $table->string('parsed_event_type')->nullable();
+            $table->string('parsed_event_category')->nullable();
+            $table->text('parsed_event_description')->nullable();
+            $table->string('parsed_event_link')->nullable();
+            $table->string('parsed_geo_point')->nullable();
+            $table->string('parsed_city')->nullable();
+            $table->string('parsed_street')->nullable();
+            $table->string('parsed_build_number')->nullable();
+            $table->string('parsed_event_photo')->nullable();
+            $table->string('parsed_source')->nullable();
+            $table->dateTime('parsed_registration_date')->nullable();
+            $table->dateTime('parsed_start_date')->nullable();
+            $table->dateTime('parsed_finish_date')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

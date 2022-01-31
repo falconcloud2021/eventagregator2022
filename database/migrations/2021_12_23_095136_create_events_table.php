@@ -16,29 +16,30 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->string('event_name');
-            $table->string('event_type', 45);
+            $table->char('event_type', 45);
             $table->integer('category_id')->nullable();;
             $table->text('event_description');
-            $table->string('city');
-            $table->string('street');
-            $table->string('build_number')->nullable();
+            $table->char('city');
+            $table->char('place');
+            $table->char('street')->nullable();
+            $table->char('build_number')->nullable();
             $table->string('geo_point')->nullable();
             $table->dateTime('registration_date');
             $table->dateTime('start_date');
             $table->dateTime('finish_date');
             $table->string('event_link')->nullable();
-            $table->string('event_status')->nullable();
-            $table->string('image_intro', 45);
-            $table->string('image_full', 45);
-            $table->string('alt_intro')->nullable();
-            $table->string('alt_full')->nullable();
+            $table->char('event_status')->nullable();
+            $table->char('image_intro', 45)->nullable();
+            $table->char('image_full', 45)->nullable();
+            $table->char('alt_intro')->nullable();
+            $table->char('alt_full')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_desc')->nullable();
             $table->integer('rating')->nullable();
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->string('event_source')->nullable();
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 

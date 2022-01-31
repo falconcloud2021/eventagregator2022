@@ -15,7 +15,14 @@ class CreateLettersTable extends Migration
     {
         Schema::create('letters', function (Blueprint $table) {
             $table->id();
+            $table->string('thematic');
+            $table->string('email_send_address');
+            $table->string('email_res_address');
+            $table->text('main_text');
+            $table->char('status')->nullable();
+            $table->char('group')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 
