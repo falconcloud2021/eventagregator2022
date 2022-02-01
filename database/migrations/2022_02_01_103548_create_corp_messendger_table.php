@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFrontTable extends Migration
+class CreateCorpMessendgerTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateFrontTable extends Migration
      */
     public function up()
     {
-        Schema::create('front', function (Blueprint $table) {
+        Schema::create('corp_messendger', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->SoftDeletes();
         });
     }
 
@@ -27,6 +26,6 @@ class CreateFrontTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('front');
+        Schema::dropIfExists('corp_messendger');
     }
 }

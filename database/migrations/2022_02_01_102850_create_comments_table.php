@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFrontTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateFrontTable extends Migration
      */
     public function up()
     {
-        Schema::create('front', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->text('comment_text')->nullable();
             $table->timestamps();
-            $table->SoftDeletes();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateFrontTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('front');
+        Schema::dropIfExists('comments');
     }
 }

@@ -16,8 +16,8 @@ class CreateEventsTypesTable extends Migration
         Schema::create('events_types', function (Blueprint $table) {
             $table->id();
             $table->char('type_name')->nullable();
-            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
+            $table->SoftDeletes();
         });
     }
 
