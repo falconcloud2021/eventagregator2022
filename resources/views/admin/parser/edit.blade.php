@@ -137,7 +137,7 @@
                             <div class="form-group">
                                 <label>Geo point</label>
                                 <input name="parsed_geo_point" type="text" class="form-control"
-                                       placeholder="Enter event link" value="{{$parser->parsed_geo_point}}">
+                                       placeholder="Enter event geo point" value="{{$parser->parsed_geo_point}}">
                                 @error('parsed_geo_point')
                                 <div class="text-danger">
                                     {{$message}}

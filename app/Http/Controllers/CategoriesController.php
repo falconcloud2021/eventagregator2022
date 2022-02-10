@@ -2,17 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Illuminate\Support\Carbon;
+use App\Models\CategoriesModel;
 use App\Models\Events;
 use App\Models\TypesModel;
-use App\Models\CategoriesModel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Service\Provider;
 
 class CategoriesController extends Controller

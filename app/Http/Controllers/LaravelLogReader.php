@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\LogReader\LogReader;
 
 class LaravelLogReader
 {
