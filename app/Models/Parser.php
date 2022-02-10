@@ -15,16 +15,16 @@ class Parser extends Model
 
     public function startDateForInput()
     {
-        return Carbon::parse($this->parsed_start_date)->format('Y-m-d');
+        return Carbon::parse($this->parsed_start_date)->format('Y-m-d\TH:i');
     }
 
     public function finishDateForInput()
     {
-        return Carbon::parse($this->parsed_finish_date)->format('Y-m-d');
+        return Carbon::parse($this->parsed_finish_date)->format('Y-m-d\TH:i');
     }
 
     public function registrationDateForInput()
     {
-        return Carbon::parse($this->parsed_registration_date)->format('Y-m-d');
+        return Carbon::parse($this->parsed_registration_date)->format('Y-m-d\TH:i');
     }
 }

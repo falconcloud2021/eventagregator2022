@@ -186,7 +186,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Registration date</label>
-                                <input name="parsed_registration_date" type="date" class="form-control"
+                                <input name="parsed_registration_date" type="datetime-local" class="form-control"
                                        placeholder="Enter registration date"
                                        value="{{$parser->registrationDateForInput()}}">
                                 @error('parsed_registration_date')
@@ -197,7 +197,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Start date</label>
-                                <input name="parsed_start_date" type="date" class="form-control"
+                                <input name="parsed_start_date" type="datetime-local" class="form-control"
                                        placeholder="Enter start date" value="{{$parser->startDateForInput()}}">
                                 @error('parsed_start_date')
                                 <div class="text-danger">
