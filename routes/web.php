@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventsController;
@@ -26,7 +27,7 @@ use App\Http\Controllers\LogReaderController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 Route::get('/dashboarddefault', function () {
     return view('dashboarddefault');
 });
@@ -122,4 +123,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get(config('laravel-log-reader.api_route_path'), 'LogReaderController@getLogs');
     });
 
+    // 11. Logout
+    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });

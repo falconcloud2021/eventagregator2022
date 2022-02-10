@@ -208,7 +208,7 @@
                                 {{-- <x-jet-action-message class="ml-3" on="loggedOut">
                                     {{ __('Done.') }}
                                 </x-jet-action-message> --}}
-                                <a class="dropdown-item" href="#"><i class="fa fa-power-off me-1 ms-1"></i>Logout</a>
+                                <a class="dropdown-item" href="{{route('logout')}}"><i class="fa fa-power-off me-1 ms-1"></i>Logout</a>
                                 <div class="dropdown-divider"></div>
                                 <div class="ps-4 p-10">
                                     <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded text-white">Показати історію</a>
