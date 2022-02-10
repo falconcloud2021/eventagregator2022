@@ -4,12 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Events;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Service\Provider;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Storage;
 
 class EventsController extends Controller
 {
@@ -33,11 +28,12 @@ class EventsController extends Controller
         ]);
     }
 
-    public function eventCreateForm(){
+    public function eventCreateForm()
+    {
         return view('events/eventcreate');
     }
 
-     public function eventEditForm($id)
+    public function eventEditForm($id)
     {
         $eventModel = new Events();
         $event = $eventModel->getEventByID($id);
@@ -137,10 +133,10 @@ class EventsController extends Controller
 
 
     /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     /*
     public function event_create($id)
     {
