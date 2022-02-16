@@ -11,4 +11,6 @@ class Events extends Model
 
     protected $table = 'events';
 
+    protected $guarded = false;
+
 }
