@@ -83,7 +83,7 @@
                     <div class="card-body">
                         <div>
                             <h5 class="card-title">Результат роботи парсерів <strong>Sportcalendar</strong></h5>
-                            <form action="{{ route('events') }}" method="GET">
+                            <form action="{{ route('event.index') }}" method="GET">
                                 @csrf
                                 <button type="submit" class="btn btn-cyan btn-sm text-white submit">Перейти в Додані
                                     події!

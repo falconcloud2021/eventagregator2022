@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Event\EventRequest;
 use App\Models\Events;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class EventsController extends Controller
