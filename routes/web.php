@@ -45,19 +45,14 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
     // 2. Events methods:
     // * 2.1 events SHOW methods;
-    Route::get('/events', [EventsController::class, 'eventsList'])->name('events');
-    Route::get('/event/show/{id}', [EventsController::class, 'eventShow'])->name('event_show');
-    Route::get('/events/top-list', [EventsController::class, 'eventsTopList'])->name('events_top');
     Route::get('/events/archived', [EventsController::class, 'archivedEvents'])->name('archived_events');
     Route::get('/event/archive/{id}', [EventsController::class, 'archiveEventItem'])->name('archive_event');
     Route::get('/events/related', [EventsController::class, 'eventsRelatedFilter'])->name('related_events');
-    // * 2.2 events CRUD methods;
-    Route::get('/event/create', [EventsController::class, 'eventCreateForm'])->name('event_create');
-    Route::post('/event/store', [EventsController::class, 'eventStoreForm'])->name('event_store');
-    Route::get('/event/edit/{id}', [EventsController::class, 'eventEditForm'])->name('event_edit');
-    Route::post('/event/save/{id}', [EventsController::class, 'eventSaveForm'])->name('event_save');
     Route::any('/event/add-to-archive/{id}', [EventsController::class, 'eventSendToArchiveForm'])->name('event_archive');
-    Route::any('/event/delete/{id}', [EventsController::class, 'eventDeleteForm'])->name('event_delete');
+
+    // * 2.2 events CRUD methods;
+    Route::resource('event', EventsController::class);
+
     // * 2.3 CategoriesEvents SHOW\CRUD methods;
     Route::get('/categories/categories-types', [CategoriesController::class, 'showCategoriesTypes'])->name('categoryType');
     Route::post('/categories/store-category', [CategoriesController::class, 'storeCategory'])->name('storeCategory');

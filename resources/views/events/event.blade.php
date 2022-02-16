@@ -8,7 +8,7 @@
                 <h4 class="page-title">Картка Спорт-події</h4>
                 <div class="ms-auto text-center">
                     <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="/events">
+                        <a href="{{route('event.index')}}">
                         <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"><i class="mdi mdi-bike"></i>
                                 Всі події</button>
                         </a>
@@ -49,50 +49,20 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($event as $name => $value)
+                @foreach(($event->getAttributes()) as $name => $value)
                     <tr>
                         <td>{{$name}}</td>
-                        @if($name == 'image_intro' || $name == 'image_full')
-                            <td>
-                                <div class="card el-element-overlay col-md-3 ">
-                                    <div class="el-card-item">
-                                        <div class="el-card-avatar el-overlay-1">
-
-                                            <img width="400" height="400" src="{{ asset('storage/image/origin/'.$value) }}" alt="user" >
-                                            <div class="el-overlay">
-                                                <ul class="list-style-none el-info">
-                                                    <li class="el-item">
-                                                        <a class="btn default btn-outline image-popup-vertical-fit el-link
-                                                        " href="{{ asset('storage/image/origin/'.$value) }}"><i class="mdi mdi-magnify-plus"></i></a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        @else
-                            <td>{{ $value }}</td>
-                        @endif
+                        <td>{{ $value }}</td>
                     </tr>
-
                 @endforeach
                 </tbody>
             </table>
         </div>
         <!-- ================================== -->
         <!-- End PAge Content -->
-
-        <!-- Right sidebar -->
-
-        <!-- .right-sidebar -->
-        <!-- ===================================== -->
-        <!-- End Right sidebar -->
     </div>
     <!-- ======================================= -->
     <!-- End Container fluid  -->
-
-
 
 @stop
 

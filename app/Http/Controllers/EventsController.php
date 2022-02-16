@@ -2,144 +2,54 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Event\EventRequest;
 use App\Models\Events;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class EventsController extends Controller
 {
-    public function eventsList()
+    public function index(): View
     {
-        $eventsModel = new Events();
-        $events = $eventsModel->getEvents();
-        return view('admin/events', [
-            'user' => 'admin',
-            'events' => $events,
-        ]);
+        $events = Events::paginate(5);
+        $eventsTop = Events::query()->orderBy('rating')->limit(5)->get();
+        return view('admin.events', compact('events', 'eventsTop'));
     }
 
-    public function eventShow($id)
+    public function show(Events $event): View
     {
-        $eventModel = new Events();
-        $event = $eventModel->getEventByID($id);
-        return view('events/event', [
-            'user' => 'admin',
-            'event' => $event
-        ]);
+        return view('events.event', compact('event'));
     }
 
-    public function eventCreateForm()
+    public function create(): View
     {
-        return view('events/eventcreate');
+        return view('events.eventcreate');
     }
 
-    public function eventEditForm($id)
+    public function edit(Events $event): View
     {
-        $eventModel = new Events();
-        $event = $eventModel->getEventByID($id);
-        return view('events/eventedit', [
-            'user' => 'admin',
-            'event' => $event,
-            'id' => $id
-        ]);
+        return view('events.eventedit', compact('event'));
     }
 
-    public function eventSaveForm(Request $request, $id)
+    public function store(EventRequest $request): RedirectResponse
     {
-        $request->validate([
-            'event_name' => 'required',
-            'event_type' => 'required',
-            'category_id' => 'required',
-            'city' => 'required',
-            'street' => 'required',
-            'registration_date' => 'required',
-            'start_date' => 'required',
-            'finish_date' => 'required',
-            'event_link' => 'required',
-            'event_status' => 'required',
-            'image_intro' => 'required',
-            'image_full' => 'required',
-            'meta_title' => 'required',
-            'meta_desc' => 'required',
-            'rating' => 'required',
-            'url' => 'required',
-            'created_at' => 'required',
-            'updated_at' => 'required',
-        ]);
-
-        $eventModel = new Events();
-        $eventModel->saveEvent($request, $id);
-
-        $eventModel = new Events();
-        $events = $eventModel->getEvents();
-        return view('admin/events', [
-            'user' => 'admin',
-            'events' => $events,
-            'update' => true
-        ]);
+        $data = $request->validated();
+        Events::firstOrCreate($data);
+        return redirect()->route('event.index');
     }
 
-    public function eventStoreForm(Request $request)
+    public function update(EventRequest $request, Events $event): RedirectResponse
     {
-        $eventModel = new Events();
-        $events = $eventModel->getEvents();
-        return view('admin/events', [
-            'user' => 'admin',
-            'events' => $events,
-            'create' => true
-        ]);
-
-        $request->validate([
-            'event_name' => 'required',
-            'event_type' => 'required',
-            'category_id' => 'required',
-            'city' => 'required',
-            'street' => 'required',
-            'registration_date' => 'required',
-            'start_date' => 'required',
-            'finish_date' => 'required',
-            'event_link' => 'required',
-            'event_status' => 'required',
-            'image_intro' => 'required',
-            'image_full' => 'required',
-            'meta_title' => 'required',
-            'meta_desc' => 'required',
-            'rating' => 'required',
-            'url' => 'required',
-            'created_at' => 'required',
-            'updated_at' => 'required',
-        ]);
-
-        $eventModel = new Events();
-        $eventModel->createEvent($request);
-
-        return Redirect()->back();
-
+        $data = $request->validated();
+        $event->update($data);
+        return redirect()->route('event.index');
     }
 
-    public function eventDeleteForm($id)
+    public function destroy(Events $event)
     {
-        $eventModel = new Events();
-        $response = $eventModel->deleteEvent($id);
+        $event->delete();
+        return redirect()->route('event.index');
 
-        $eventModel = new Events();
-        $events = $eventModel->getEvents();
-        return view('admin/events', [
-            'user' => 'admin',
-            'events' => $events,
-            'delete' => true
-        ]);
     }
-
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    /*
-    public function event_create($id)
-    {
-    //
-    }
-    */
 }
