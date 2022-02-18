@@ -17,38 +17,7 @@
                         <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-cursor-pointer"></i>
                             Редактор</button>
                     </a>
-                        <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-comment-processing"></i>
-                            Коменти</button>
-                        <button type="button" class="btn btn-dark btn btn-sm" data-placement="bottom" title="Tooltip on bottom"><i class="mdi mdi-chart-bar"></i>
-                            Звіти</button>
                 </div>
-                <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-                    <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-                        <ul class="navbar-nav float-end">
-                            <!-- Start User Dropdown menu -->
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic"
-                                    href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="mdi mdi-arrange-bring-to-front font-14"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-account me-1 ms-1"></i>Мій профайл</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-wallet me-1 ms-1"></i>Мій баланс</a>
-                                    <a class="dropdown-item" href="javascript:void(0)"><i class="mdi mdi-email me-1 ms-1"></i>Пошта</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="mdi mdi-settings me-1 ms-1"></i>Налаштування аккаунту</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#"><i class="fa fa-power-off me-1 ms-1"></i>Logout</a>
-                                    <div class="dropdown-divider"></div>
-                                    <div class="ps-4 p-10">
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded text-white">Показати профайл</a>
-                                    </div>
-                                </ul>
-                            </li>
-                            <!-- End User Dropdown menu -->
-                        </ul>
-                    </div>
-                </nav>
             </div>
             <!--  -->
             <div class="ms-auto text-end">
@@ -149,14 +118,14 @@
                         <div class="input-group input-group-sm mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Тип Спорт-події :</span>
-                                @if ($errors->has('event_name')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
+                                @if ($errors->has('event_type')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
                             </div>
                             <input class="form-control" type="text" id="event_type" name="event_type" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroup-sizing-sm">Опис Спорт-події :</span>
-                                @if ($errors->has('event_name')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
+                                @if ($errors->has('event_description')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
                             </div>
                             <div class="col-12">
                                 <textarea class="form-control row-4" id="event_description" name="event_description"></textarea>
@@ -185,6 +154,12 @@
                             </label>
                             <div class="col-sm-2">
                                 <input class="form-control" type="text" id="city" name="city" />
+                            </div>
+                            <label for="city" class="col-sm-1 text-end control-label col-form-label">Місце проведення* :
+                                @if ($errors->has('place')) <span class="badge bg-danger">* Заповніть це поле</span> @endif
+                            </label>
+                            <div class="col-sm-2">
+                                <input class="form-control" type="text" id="place" name="place" />
                             </div>
                             <label for="street" class="col-sm-2 text-end control-label col-form-label">Вулиця :
                                 @if ($errors->has('street')) <span class="badge bg-danger">* Заповніть це поле</span> @endif
@@ -276,7 +251,7 @@
                         </div>
                     </div>
                     <div class="ms-auto text-center">
-                        <button class="btn btn-success text-white" type="button submit"><i class="mdi mdi-arrow-right-drop-circle"></i><b> Створити Спорт-подію!</b></button>
+                        <button class="btn btn-success text-white" type="submit"><i class="mdi mdi-arrow-right-drop-circle"></i><b> Створити Спорт-подію!</b></button>
                     </div>
                 </form>
                 <div class="row">
@@ -299,18 +274,6 @@
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-success margin-5 text-white" data-toggle="modal" data-target="#Modal1">
-                            <i class="mdi mdi-arrow-right-drop-circle"></i><b>  Створити Спорт-подію!</b>
-                        </button>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-warning margin-5 text-white" data-toggle="modal" data-target="#Modal2">
-                            <i class="mdi mdi-view-dashboard"></i><b> Dashboard</b>
-                        </button>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-info margin-5" data-toggle="modal" data-target="#Modal3">
-                            <i class="mdi mdi-animation"></i><b>  Відміна</b>
-                        </button>
                         <!-- Modal -->
                         <div class="modal fade" id="Modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true ">
                             <div class="modal-dialog" role="document ">
@@ -367,9 +330,7 @@
                         </div>
                     </div>
                 </div>
-              <div class="col-lg-12 text-center mt-4">
-                    Already have an account? <a href="#" class="text-danger">Sign In</a>
-              </div>
+
             </div>
         </div>
     </div>
@@ -388,4 +349,3 @@
 @section('sidebar')
     @parent
 @endsection
-

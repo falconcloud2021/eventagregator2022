@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Validation\ValidationException;
+use App\Http\Controllers\FrontUserController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,27 +28,21 @@ use Illuminate\Validation\ValidationException;
 //         return $user->createToken($request->device_name)->plainTextToken;
 // });
 // Default opened routing send tokens API "desktop web version" for all users
-Route::get('/',                     'App\Http\Controllers\FrontController@index')->name('expenses.indexPage');
-Route::get('/event/show/{id}',      'App\Http\Controllers\FrontController@eventShowItem')->name('expenses.itemEvent');
-Route::post('/events/selection',    'App\Http\Controllers\FrontController@eventsSelect')->name('expenses.selectEvent');
-
-// Route::post('/register',        'Api\AuthController@register');
-// Route::post('/login',           'Api\AuthController@login');
+Route::get('/',                     [FrontController::class,'index'])->name('expenses.indexPage');
+Route::get('/event/show/{id}',      [FrontController::class,'eventShowItem'])->name('expenses.itemEvent');
+Route::post('/events/selection',    [FrontController::class,'eventsSelect'])->name('expenses.selectEvent');
 // // Authorize user auth:api
-// Route::middleware('auth:api')->group(function () {
-//     Route::get('user/comments',     'Api\FrontUsersController@frontUsersCommentsList')->name('users.listComments');
-//     Route::get('user/rate',         'Api\FrontUsersController@frontUserRate')->name('users.rateLevel');
-//     Route::post('user/add-comment', 'Api\FrontUsersController@frontUsersAddComment')->name('users.addComment');
-// });
-// // Authorize user auth:sanctum
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-// // CRUD roles routing send tokens API "desktop web version" / "authorized partners-users"
 Route::middleware('auth:sanctum', 'verified')->group(function () {
-    Route::get('partner/events',            'Api\FrontPartnersController@frontEventsList')->name('partners.listEvents');
-    Route::post('partner/event/store',      'Api\FrontPartnersController@frontEventStore')->name('partners.storeEvent');
-    Route::get('partner/event/show',        'Api\FrontPartnersController@frontEventShow')->name('partners.showEvent');
-    Route::put('partner/event/update',      'Api\FrontPartnersController@frontEventUpdate')->name('partners.updateEvent');
-    Route::delete('partner/event/destroy',  'Api\FrontPartnersController@frontEventDestroy')->name('partners.destroyEvent');
+    Route::get('user/comments',     [FrontUserController::class,'frontUsersCommentsList'])->name('users.listComments');
+    Route::get('user/rate',         [FrontUserController::class,'frontUserRate'])->name('users.rateLevel');
+    Route::post('user/add-comment', [FrontUserController::class,'frontUsersAddComment'])->name('users.addComment');
+ });
+// // Authorize user auth:sanctum
+// CRUD roles routing send tokens API "desktop web version" / "authorized partners-users"
+Route::middleware('auth:sanctum', 'verified')->group(function () {
+    Route::get('partner/events',            'api\FrontPartnersController@frontEventsList')->name('partners.listEvents');
+    Route::post('partner/event/store',      'api\FrontPartnersController@frontEventStore')->name('partners.storeEvent');
+    Route::get('partner/event/show',        'api\FrontPartnersController@frontEventShow')->name('partners.showEvent');
+    Route::put('partner/event/update',      'api\FrontPartnersController@frontEventUpdate')->name('partners.updateEvent');
+    Route::delete('partner/event/destroy',  'api\FrontPartnersController@frontEventDestroy')->name('partners.destroyEvent');
 });

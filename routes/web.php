@@ -33,21 +33,21 @@ Route::get('/dashboarddefault', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-
+ 
     // 1. Part Navigate sidebar dashboard:
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/charts', [AdminController::class, 'charts_list'])->name('charts');
-    Route::get('/widgets', [AdminController::class, 'widgets_list'])->name('widgets');
-    Route::get('/users', [AdminController::class, 'users_list'])->name('users');
-    Route::get('/organizer', [AdminController::class, 'organizer'])->name('organizer');
-    Route::get('/dashboard2', [AdminController::class, 'dashboard2'])->name('dashboard2');
-    Route::get('/bells', [AdminController::class, 'bells_list'])->name('bells');
+    Route::get('/dashboard',    [AdminController::class, 'dashboard'])->name('dashboard');
+    Route::get('/charts',       [AdminController::class, 'charts_list'])->name('charts');
+    Route::get('/widgets',      [AdminController::class, 'widgets_list'])->name('widgets');
+    Route::get('/users',        [AdminController::class, 'users_list'])->name('users');
+    Route::get('/organizer',    [AdminController::class, 'organizer'])->name('organizer');
+    Route::get('/dashboard2',   [AdminController::class, 'dashboard2'])->name('dashboard2');
+    Route::get('/bells',        [AdminController::class, 'bells_list'])->name('bells');
 
     // 2. Events methods:
     // * 2.1 events SHOW methods;
-    Route::get('/events/archived', [EventsController::class, 'archivedEvents'])->name('archived_events');
-    Route::get('/event/archive/{id}', [EventsController::class, 'archiveEventItem'])->name('archive_event');
-    Route::get('/events/related', [EventsController::class, 'eventsRelatedFilter'])->name('related_events');
+    Route::get('/events/archived',      [EventsController::class, 'archivedEvents'])->name('archived_events');
+    Route::get('/event/archive/{id}',   [EventsController::class, 'archiveEventItem'])->name('archive_event');
+    Route::get('/events/related',       [EventsController::class, 'eventsRelatedFilter'])->name('related_events');
     Route::any('/event/add-to-archive/{id}', [EventsController::class, 'eventSendToArchiveForm'])->name('event_archive');
 
     // * 2.2 events CRUD methods;
@@ -77,12 +77,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::get('/todo/list', [OrganizerController::class, 'todo_list']);
 
     // 7. Manager methods:
-    Route::get('manager/dashboard3', [ManagerController::class, 'dashboard3'])->name('dashboard3');
-    Route::get('manager/gallery2', [ManagerController::class, 'gallery2List'])->name('gallery2');
-    Route::get('manager/reports', [ManagerController::class, 'reportsList'])->name('reports');
-    Route::get('manager/report/show/{id}', [ManagerController::class, 'reportShowItem'])->name('report_item');
-    Route::get('manager/invoices', [ManagerController::class, 'invoicesList'])->name('invoices');
-    Route::get('manager/invoice/show/{id}', [ManagerController::class, 'invoiceShowItem'])->name('invoice_item');
+    //Route::get('manager/dashboard3', [ManagerController::class, 'dashboard3'])->name('dashboard3');
+    //Route::get('manager/gallery2', [ManagerController::class, 'gallery2List'])->name('gallery2');
+    //Route::get('manager/reports', [ManagerController::class, 'reportsList'])->name('reports');
+    //Route::get('manager/report/show/{id}', [ManagerController::class, 'reportShowItem'])->name('report_item');
+    //Route::get('manager/invoices', [ManagerController::class, 'invoicesList'])->name('invoices');
+    //Route::get('manager/invoice/show/{id}', [ManagerController::class, 'invoiceShowItem'])->name('invoice_item');
 
     // 8. Bells methods:
     Route::post('/bell/create', [BellsController::class, 'bell_create']);
@@ -118,6 +118,4 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::get(config('laravel-log-reader.api_route_path'), 'LogReaderController@getLogs');
     });
 
-    // 11. Logout
-    Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 });
