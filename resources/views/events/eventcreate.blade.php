@@ -108,7 +108,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <form class="form-horizontal" action="/event/store" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{route('event.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <h5 class="card-title">Картка створення Спорт-події</h5>
@@ -236,38 +236,6 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Міні лого<b>-></b>
-                                @if ($errors->has('image_intro')) <span class="badge bg-danger">* Додайте лого</span> @endif
-                            </label>
-                            <div class="col-sm-3">
-                                <input type="file" class="form-control-file" id="image_intro" name="image_intro">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="alt_intro" class="col-sm-3 text-end control-label col-form-label">Текст для зображення логотипу :
-                                @if ($errors->has('alt_intro')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
-                            </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="alt_intro" name="alt_intro" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="event_status" class="col-sm-3 text-end control-label col-form-label">Основне фото->
-                                @if ($errors->has('image_full')) <span class="badge bg-danger">* Додайте фото</span> @endif
-                            </label>
-                            <div class="col-sm-3">
-                                <input type="file" class="form-control-file" id="image_full" name="image_full">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="alt_full" class="col-sm-3 text-end control-label col-form-label">Текст для повного зображення :
-                                @if ($errors->has('alt_full')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
-                            </label>
-                            <div class="col-sm-6">
-                                <input type="text" class="form-control" id="alt_full" name="alt_full" />
-                            </div>
-                        </div>
-                        <div class="form-group row">
                             <label for="meta_title" class="col-sm-3 text-end control-label col-form-label">Мета тег title
                                 @if ($errors->has('meta_title')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
                             </label>
@@ -306,22 +274,6 @@
                                 <input class="form-control" type="text" id="event_source" name="event_source" />
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 text-end control-label col-form-label">Дата запису :
-                                @if ($errors->has('created_at')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
-                            </label>
-                            <div class="col-sm-6">
-                                <input id="created_at" name="created_at" type="datetime-local">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-3 text-end control-label col-form-label">Дата редагування :
-                                @if ($errors->has('updated_at')) <span class="badge bg-danger">* Заповніть це поле!</span> @endif
-                            </label>
-                            <div class="col-sm-6">
-                                <input id="updated_at" name="updated_at" type="datetime-local">
-                            </div>
-                        </div>
                     </div>
                     <div class="ms-auto text-center">
                         <button class="btn btn-success text-white" type="button submit"><i class="mdi mdi-arrow-right-drop-circle"></i><b> Створити Спорт-подію!</b></button>
@@ -331,13 +283,13 @@
                     <div class="col-lg-12 text-center mt-4">
                         <div class="btn-group">
                             <div>
-                                <a href="/events">
+                                <a href="{{route('event.index')}}">
                                     <button class="btn btn-dark" type="reset" value="Reset"><i class="mdi mdi-animation"></i><b> Відміна</b></button>
                                 </a>
                             </div>
                             <div> </div>
                             <div>
-                                <a href="/dashboard">
+                                <a href="{{route('dashboard')}}">
                                     <button class="btn btn-info" type="reset" value="Reset"><i class="mdi mdi-view-dashboard"></i><b> Dashboard</b></button>
                                 </a>
                             </div>
@@ -421,31 +373,6 @@
             </div>
         </div>
     </div>
-
-
-    <!--
-    <form >
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    <input type="text" name="title" class="form-control" placeholder="Title">
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Description:</strong>
-                    <textarea class="form-control" style="height:150px" name="description" placeholder="Description"></textarea>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </form>
-    -->
                 <!-- End Page Content -->
             <!-- Right sidebar -->
         <!-- .right-sidebar -->
