@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Event\EventRequest;
 use App\Models\Events;
+use App\Service\ParserService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
@@ -45,10 +46,9 @@ class EventsController extends Controller
         return redirect()->route('event.index');
     }
 
-    public function destroy(Events $event)
+    public function destroy(Events $event): RedirectResponse
     {
         $event->delete();
         return redirect()->route('event.index');
-
     }
 }
