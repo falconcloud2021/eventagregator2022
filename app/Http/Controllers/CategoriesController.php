@@ -8,7 +8,6 @@ use App\Models\TypesModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Service\Provider;
 
 class CategoriesController extends Controller
 {
@@ -19,8 +18,7 @@ class CategoriesController extends Controller
         $categories = $categoriesData->getCategories();
         $typesData = new TypesModel();
         $types = $typesData->getTypes();
-        $eventsModel = new Events();
-        $events = $eventsModel->getEvents();
+        $events = Events::paginate(5);
         return view('events/categoryType', [
             'user' => $user,
             'events' => $events,

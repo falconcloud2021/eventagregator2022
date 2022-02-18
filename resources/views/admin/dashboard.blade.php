@@ -100,7 +100,7 @@
      <div class="row">
          <!-- Column Events-->
          <div class="col-md-6 col-lg-4 col-xlg-3">
-            <a href="/events">
+            <a href="{{route('event.index')}}">
              <div class="card card-hover">
                  <div class="box bg-success text-center">
                      <h1 class="font-light text-white"><i class="mdi mdi-bike"></i></h1>
@@ -153,61 +153,6 @@
              </div>
              </a>
          </div>
-         <!-- Column Organizer -->
-         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/organizer">
-             <div class="card card-hover">
-                 <div class="box bg-dark text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                     <h6 class="text-white">Органайзер</h6>
-                 </div>
-             </div>
-            </a>
-         </div> -->
-         <!-- Column Charts -->
-         <!-- <div class="col-md-6 col-lg-4 col-xlg-3">
-            <a href="/charts">
-             <div class="card card-hover">
-                 <div class="box bg-warning text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                     <h6 class="text-white">Графіки</h6>
-                 </div>
-             </div>
-            </a>
-         </div> -->
-         <!-- Column Dashboard2 -->
-         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/dashboard2">
-             <div class="card card-hover">
-                 <div class="box bg-success text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                     <h6 class="text-white">Dashboard-II</h6>
-                 </div>
-             </div>
-            </a>
-         </div> -->
-         <!-- Column Bells -->
-         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/bells">
-             <div class="card card-hover">
-                 <div class="box bg-cyan text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
-                     <h6 class="text-white">Повідомлення</h6>
-                 </div>
-             </div>
-            </a>
-         </div> -->
-         <!-- Column Letters -->
-         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/parser">
-             <div class="card card-hover">
-                 <div class="box bg-secondary text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
-                     <h6 class="text-white">Парсер</h6>
-                 </div>
-             </div>
-            </a>
-         </div> -->
      </div>
      <!-- END Column!!! -->
      <!-- Start Sales chart -->
@@ -884,10 +829,7 @@
      <!-- Recent comment and chats -->
  </div>
  <!-- End Container fluid  -->
-
-
 @stop
-
 @section('sidebar')
 @parent
 @endsection

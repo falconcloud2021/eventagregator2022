@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Service\ArchiveEventsService;
 use App\Service\ParserService;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
@@ -19,6 +20,9 @@ class Kernel extends ConsoleKernel
         $schedule->call(function () {
             new ParserService(1800, 2000);
         })->weekly();
+        $schedule->call(function (){
+            new ArchiveEventsService();
+        })->daily();
     }
 
     /**
