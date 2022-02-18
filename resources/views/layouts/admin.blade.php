@@ -241,10 +241,6 @@
                                 <i class="mdi mdi-arrange-bring-to-front"></i><span class="hide-menu"> Парсери </span></a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Звіти в формі гістограм" href="/charts" aria-expanded="false">
-                                <i class="mdi mdi-chart-bar"></i><span class="hide-menu"> Графіки </span></a>
-                        </li>
-                        <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Сторінка віджетів Sportcalendar" href="/widgets" aria-expanded="false">
                                 <i class="mdi mdi-chart-bubble"></i><span class="hide-menu"> Віджети </span></a>
                         </li>
@@ -263,32 +259,32 @@
                             </ul>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Персональний Органайзер менеджера" href="/organizer" aria-expanded="false">
-                                <i class="mdi mdi-table-large"></i><span class="hide-menu"> Органайзер </span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Додатковий Dashboard" href="/dashboard2" aria-expanded="false">
-                                <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-II </span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Термінові повідомлення Sportcalendar" href="/bells" aria-expanded="false">
-                                <i class="mdi mdi-bell-ring"></i><span class="hide-menu"> Повідомлення </span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Поштовий агент Sportcalendar" href="/letters" aria-expanded="false">
-                                <i class="mdi mdi-email-outline"></i><span class="hide-menu"> Пошта </span></a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" title="Звіт роботи сервера Sportcalendar" href="/logs" aria-expanded="false">
-                                <i class="mdi mdi-database"></i><span class="hide-menu"> Сервер </span></a>
-                        </li>
-                        <li class="sidebar-item">
                             <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-move-resize-variant"></i><span class="hide-menu"> Додатки менеджера </span></a>
+                                <i class="mdi mdi-move-resize-variant"></i><span class="hide-menu"> Dashboard-II </span></a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
+                                    <a class="sidebar-link" title="Окремий Dashboard для менеджерів" href="/organizer">
+                                        <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Органайзер </span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" title="Додаткова галарея для менеджерів" href="/charts">
+                                        <i class="mdi mdi-multiplication-box"></i><span class="hide-menu"> Графіки </span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" title="Звіти менеджерів проекту" href="/bells">
+                                        <i class="mdi mdi-calendar-check"></i><span class="hide-menu"> Повідомлення </span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" title="Списки Інвойсів" href="/letters">
+                                        <i class="mdi mdi-bulletin-board"></i><span class="hide-menu"> Пошта </span></a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" title="Чати для менеджерів" href="/logs">
+                                        <i class="mdi mdi-message-outline"></i><span class="hide-menu"> Сервер </span></a>
+                                </li>
+                                <li class="sidebar-item">
                                     <a class="sidebar-link" title="Окремий Dashboard для менеджерів" href="/dashboard3">
-                                        <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-3 </span></a>
+                                        <i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard-III </span></a>
                                 </li>
                                 <li class="sidebar-item">
                                     <a class="sidebar-link" title="Додаткова галарея для менеджерів" href="/galery2">
@@ -305,20 +301,6 @@
                                 <li class="sidebar-item">
                                     <a class="sidebar-link" title="Чати для менеджерів" href="/chats">
                                         <i class="mdi mdi-message-outline"></i><span class="hide-menu"> Chat Options </span></a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false">
-                                <i class="mdi mdi-account-key"></i><span class="hide-menu"> Оновлення </span></a>
-                            <ul aria-expanded="false" class="collapse first-level">
-                                <li class="sidebar-item">
-                                    <a href="authentication-login.html" class="sidebar-link">
-                                        <i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Важливо </span></a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a href="authentication-register.html" class="sidebar-link">
-                                        <i class="mdi mdi-all-inclusive"></i><span class="hide-menu"> Кастомно </span></a>
                                 </li>
                             </ul>
                         </li>
@@ -344,11 +326,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="sidebar-item p-3">
+                        <!-- <li class="sidebar-item p-3">
                             <a target="_blank" class=" w-100 btn btn-cyan d-flex align-items-center text-white">
                                 <i class="mdi mdi-cloud-download font-20 me-2">
                                 </i>Новий проект!</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->

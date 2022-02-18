@@ -13,10 +13,14 @@ class AdminController extends Controller
             'user' => 'admin']);
     }
 
-    public function charts_list()
+    public function users_list()
     {
-        return view('admin/charts', [
-            'user' => 'admin']);
+        $usersModel = new Users();
+        $users = $usersModel->getUsers();
+        return view('admin/users', [
+            'user' => 'admin',
+            'users' => $users
+        ]);
     }
 
     public function widgets_list()
@@ -29,14 +33,10 @@ class AdminController extends Controller
         ]);
     }
 
-    public function users_list()
+    public function charts_list()
     {
-        $usersModel = new Users();
-        $users = $usersModel->getUsers();
-        return view('admin/users', [
-            'user' => 'admin',
-            'users' => $users
-        ]);
+        return view('admin/charts', [
+            'user' => 'admin']);
     }
 
     public function organizer()

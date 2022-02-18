@@ -6,7 +6,7 @@
 <div class="page-breadcrumb">
     <div class="row">
         <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Партнери</h4>
+            <h4 class="page-title">Організатори</h4>
             <div class="ms-auto text-center">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn btn-dark btn btn-sm d-flex align-items-center text-white dropdown-toggle" data-placement="bottom" title="Перехід до основного списку Спорт-подій!"
@@ -38,27 +38,6 @@
                         <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
                             <img src="/admin/assets/images/logo-icon.png" alt="homepage" class="light-logo" width="12" /></a></li>
                         <li class="breadcrumb-item active" aria-current="page"><i class="text-primary"><b>Організатори.</b></i>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- Bread crumb and right sidebar toggle -->
-<div class="page-breadcrumb">
-    <div class="row">
-        <div class="col-12 d-flex no-block align-items-center">
-            <h4 class="page-title">Організатори</h4>
-            <div class="ms-auto text-end">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/dashboard" title="Перехід на головну">
-                            <h6><i>Dashboard-I</i></h6></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <i class="text-primary"><b>Організатори.</b></i>
-                        </li>
                     </ol>
                 </nav>
             </div>

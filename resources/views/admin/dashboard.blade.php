@@ -98,7 +98,7 @@
  <div class="container-fluid">
     <!-- START Column!!! -->
      <div class="row">
-          <!-- Column -->
+         <!-- Column Events-->
          <div class="col-md-6 col-lg-4 col-xlg-3">
             <a href="/events">
              <div class="card card-hover">
@@ -109,24 +109,13 @@
              </div>
             </a>
          </div>
-         <!-- Column -->
+         <!-- Column Parser -->
          <div class="col-md-6 col-lg-2 col-xlg-3">
             <a href="{{route('parser.index')}}">
              <div class="card card-hover">
                  <div class="box bg-cyan text-center">
                      <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
                      <h6 class="text-white">Парсер</h6>
-                 </div>
-             </div>
-            </a>
-         </div>
-         <!-- Column Charts -->
-         <div class="col-md-6 col-lg-4 col-xlg-3">
-            <a href="/charts">
-             <div class="card card-hover">
-                 <div class="box bg-warning text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
-                     <h6 class="text-white">Графіки</h6>
                  </div>
              </div>
             </a>
@@ -142,6 +131,17 @@
              </div>
             </a>
          </div>
+         <!-- Column Partners -->
+         <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/partners">
+             <div class="card card-hover">
+                 <div class="box bg-primary text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
+                     <h6 class="text-white">Організатори</h6>
+                 </div>
+             </div>
+            </a>
+         </div>
          <!-- Column Users -->
          <div class="col-md-6 col-lg-2 col-xlg-3" >
             <a href="/users">
@@ -153,19 +153,8 @@
              </div>
              </a>
          </div>
-         <!-- Column Partners -->
-         <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/partners">
-             <div class="card card-hover">
-                 <div class="box bg-primary text-center">
-                     <h1 class="font-light text-white"><i class="mdi mdi-relative-scale"></i></h1>
-                     <h6 class="text-white">Партнери</h6>
-                 </div>
-             </div>
-            </a>
-         </div>
          <!-- Column Organizer -->
-         <div class="col-md-6 col-lg-2 col-xlg-3">
+         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
             <a href="/organizer">
              <div class="card card-hover">
                  <div class="box bg-dark text-center">
@@ -174,9 +163,20 @@
                  </div>
              </div>
             </a>
-         </div>
+         </div> -->
+         <!-- Column Charts -->
+         <!-- <div class="col-md-6 col-lg-4 col-xlg-3">
+            <a href="/charts">
+             <div class="card card-hover">
+                 <div class="box bg-warning text-center">
+                     <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
+                     <h6 class="text-white">Графіки</h6>
+                 </div>
+             </div>
+            </a>
+         </div> -->
          <!-- Column Dashboard2 -->
-         <div class="col-md-6 col-lg-2 col-xlg-3">
+         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
             <a href="/dashboard2">
              <div class="card card-hover">
                  <div class="box bg-success text-center">
@@ -185,9 +185,9 @@
                  </div>
              </div>
             </a>
-         </div>
+         </div> -->
          <!-- Column Bells -->
-         <div class="col-md-6 col-lg-2 col-xlg-3">
+         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
             <a href="/bells">
              <div class="card card-hover">
                  <div class="box bg-cyan text-center">
@@ -196,18 +196,18 @@
                  </div>
              </div>
             </a>
-         </div>
+         </div> -->
          <!-- Column Letters -->
-         <div class="col-md-6 col-lg-2 col-xlg-3">
-            <a href="/letters">
+         <!-- <div class="col-md-6 col-lg-2 col-xlg-3">
+            <a href="/parser">
              <div class="card card-hover">
                  <div class="box bg-secondary text-center">
                      <h1 class="font-light text-white"><i class="mdi mdi-email-outline"></i></h1>
-                     <h6 class="text-white">Пошта</h6>
+                     <h6 class="text-white">Парсер</h6>
                  </div>
              </div>
             </a>
-         </div>
+         </div> -->
      </div>
      <!-- END Column!!! -->
      <!-- Start Sales chart -->

@@ -49,7 +49,7 @@
 <!-- Container fluid  -->
 <div class="container-fluid">
     <!-- Start Page Content -->
-    <div class="row el-element-overlay">
+    <div class="row el-element-overlay"> 
 
         @foreach ($widgets as $widget)
         <div class="col-lg-3 col-md-6">
@@ -85,11 +85,8 @@
     </div>
         <!-- End PAge Content -->
     <!-- Right sidebar -->
-    <!-- ============================================================== -->
     <!-- .right-sidebar -->
-    <!-- ============================================================== -->
     <!-- End Right sidebar -->
-    <!-- ============================================================== -->
 </div>
 <!-- End Container fluid  -->
 
